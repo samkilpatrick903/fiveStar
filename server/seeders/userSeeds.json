@@ -1,0 +1,23 @@
+[
+    {
+      "username": "Todd Taylor",
+      "email": "todd@test.com",
+      "password": "password1234"
+    },
+    {
+      "username": "Sam Kilpatrick",
+      "email": "sam@test.com",
+      "password": "password1234"
+    },
+    {
+      "username": "Mary Lou Hoover",
+      "email": "ml@test.com",
+      "password": "password1234"
+    },
+    {
+      "username": "Brooke Jones",
+      "email": "brooke@test.com",
+      "password": "password1234"
+    }
+  ]
+  
