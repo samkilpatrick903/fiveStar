@@ -10,7 +10,7 @@ import { Checkbox } from "@mui/material";
 import { Button } from "@mui/material";
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { LoginDesktop } from "../components/LoginDesktop";
+// import { LoginDesktop } from "../components/LoginDesktop";
 import { Redirect } from "react-router-dom";
 
 import Avatar from '@mui/material/Avatar';
@@ -28,28 +28,28 @@ import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 
 import Auth from '../utils/auth';
-export function MediaQuery(){
-    const [isDesktop, setDesktop] = useState(window.innerWidth > 1450);
+// export function MediaQuery(){
+    // const [isDesktop, setDesktop] = useState(window.innerWidth > 1450);
   
-    const updateMedia = () => {
-      setDesktop(window.innerWidth > 1450);
-    };
+    // const updateMedia = () => {
+    //   setDesktop(window.innerWidth > 1450);
+    // };
   
-    useEffect(() => {
-      window.addEventListener("resize", updateMedia);
-      return () => window.removeEventListener("resize", updateMedia);
-    });
+    // useEffect(() => {
+    //   window.addEventListener("resize", updateMedia);
+    //   return () => window.removeEventListener("resize", updateMedia);
+    // });
   
-    return (
-      <div>
-        {isDesktop ? (
-           <LoginDesktop/>
-        ) : (
-          <Login/>
-        )}
-      </div>
-    );
-  }
+  //   return (
+  //     <div>
+  //       {isDesktop ? (
+  //          <LoginDesktop/>
+  //       ) : (
+  //         <Login/>
+  //       )}
+  //     </div>
+  //   );
+  // }
 
 const LogoImg="./assets/img/logo.png"
 //STYLING WILL COME BACK AND CHANGE TO SX
