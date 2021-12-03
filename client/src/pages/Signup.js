@@ -10,7 +10,7 @@ import { Checkbox } from "@mui/material";
 import { Button } from "@mui/material";
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { LoginDesktop } from "../components/LoginDesktop";
+// import { LoginDesktop } from "../components/LoginDesktop";
 import { Redirect } from "react-router-dom";
 
 import Avatar from '@mui/material/Avatar';
@@ -24,8 +24,8 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Login } from "./Login";
 
 
-import { useMutation } from '@apollo/client';
-import { ADD_USER } from '../utils/mutations';
+// import { useMutation } from '@apollo/client';
+// import { ADD_USER } from '../utils/mutations';
 
 import Auth from '../utils/auth';
 export function MediaQuery(){

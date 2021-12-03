@@ -1,11 +1,7 @@
 // import Customs from './testation/Customs'
 // import {Home} from './pages/home'
-import {Login} from './pages/Login'
-import {SignUp} from './pages/signup'
-// import  {NavBar}  from './components/NavBar';
-// import  {FeaturedPost}from './components/booty'
-// import Row from './components/CoinInfo'
-// import {Coins} from './components/Coins'
+import { Login } from './pages/Login'
+import { SignUp } from './pages/signup'
 import React from 'react';
 import {
   ApolloClient,
@@ -13,11 +9,8 @@ import {
   ApolloProvider,
   createHttpLink,
 } from '@apollo/client';
-import { BrowserRouter as Router,Switch, Route ,useLocation } from 'react-router-dom';
-
-
+import { BrowserRouter as Router, Switch, Route, useLocation } from 'react-router-dom';
 import { setContext } from '@apollo/client/link/context';
-
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -44,34 +37,33 @@ const client = new ApolloClient({
 
 function App() {
   return (
-      <ApolloProvider client={client}>
-        <Router>
-          <>
-         
-          
-            <Switch>
-              <Route exact path='/' component={Home}/>
-            </Switch>
-            
-              <Route exact path='/login'component={Login} />
-              <Switch>
-              <Route exact path='/signup' component={SignUp}/>
-            </Switch>
-            <Switch>
-              <Route exact path='/coininfo' component={Row}/>
-            </Switch>
-            <Switch>
-              <Route exact path='/coins' component={Coins}/>
-            </Switch>
-            <Switch>
-              <Route exact path='/featured' component={FeaturedPost}/>
-            </Switch> 
-          </>
-        </Router>
-        
-       
-     </ApolloProvider>
-    
+    <ApolloProvider client={client}>
+      <Router>
+        <>
+
+          {/* <Switch>
+            <Route exact path='/' component={Home} />
+          </Switch> */}
+
+          <Route exact path='/login' component={Login} />
+          <Switch>
+            <Route exact path='/signup' component={SignUp} />
+          </Switch>
+          {/* <Switch>
+            <Route exact path='/coininfo' component={Row} />
+          </Switch>
+          <Switch>
+            <Route exact path='/coins' component={Coins} />
+          </Switch>
+          <Switch>
+            <Route exact path='/featured' component={FeaturedPost} />
+          </Switch> */}
+        </>
+      </Router>
+
+
+    </ApolloProvider>
+
   );
 }
 
