@@ -1,0 +1,56 @@
+[
+    {
+        "location_name": "Lala's Little Nugget",
+        "address": "2207 Justin Ln, Austin, TX 78757",
+        "up_votes": "5",
+        "drink_names": 
+        [
+            "Naughty Nugget", "Buddy's Elf Fashioned", "Lump of Cole"
+        ]
+    },
+    {
+        "location_name": "Wonder Bar",
+        "address": "11500 Rock Rose Ave suite d, Austin, TX 78758",
+        "up_votes": "5",
+        "drink_name": 
+        [
+            "Wonder Water", "Austin Jackass", "Livin’ My Best Life"
+        ]
+    },
+    {
+        "location_name": "Taco Flats",
+        "address": 
+        [  
+            "5520 Burnet Rd #101, Austin, TX 78756", "1110 West Lynn, Austin, TX", "2500 E. 6TH STREET, Austin, TX", "61 Rainey Street, Austin, TX"
+        ],
+        "up_votes": "5",
+        "drink_name": 
+        [
+            "Mezcal Negroni", "Mexico City Sour", "Spicy Frozen Margarita"
+        ]
+    },
+    {
+        "location_name": "Workhorse Bar",
+        "address": "100 N Loop Blvd E Suite B, Austin, TX 78751",
+        "up_votes": "5",
+        "drink_name": 
+        [
+            "Porch Swing", "Whiskey Rose", "NO-LO Paloma"
+        ]
+    },
+    {
+        "location_name": "The Dogwood",
+        "address": 
+        [   
+            "715 W 6th St, Austin, TX 78701", "11420 Rock Rose Ave #130, Austin, TX 78758"
+        ],
+        "up_votes": "5",
+        "drink_name": 
+        [
+            "Waterloo Classic", "Texas-Sized Mimosa", "Bloody Mary"
+        ]
+    },
+   
+
+
+]

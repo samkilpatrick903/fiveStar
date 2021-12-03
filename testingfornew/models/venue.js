@@ -8,20 +8,14 @@ const venueSchema = new Schema({
     required: true,
     trim: true,
   },
-  address: {
+  address: [
+    {
     type: String,
     required: true,
-  },
-  up_votes: Number,
-  down_votes: Number,
-  hours: String,
-
-  top_drinks: [
-    {
-      type: String,
     },
   ],
-  all_drinks: [
+  up_votes: Number,
+  drink_name: [
     {
       type: String,
     },
