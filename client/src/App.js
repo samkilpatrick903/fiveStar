@@ -14,8 +14,8 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { BrowserRouter as Router,Switch, Route ,useLocation } from 'react-router-dom';
-
-
+//GOOD API GRABBED FROM LINK BROOK SEND FREE CROWDSOURCED DRINK REVIEWS
+/////https://www.thecocktaildb.com/api.php
 import { setContext } from '@apollo/client/link/context';
 
 
