@@ -38,8 +38,10 @@ const userSchema = new Schema({
 	},
 	bio: {
 		type: String,
-		maxLength: [ 255, 'Your bio can only be 255 characters long' ]
+		maxLength: [ 255]
 	},
+
+
 	date_joined: {
         type: Date,
         default: Date.now,
@@ -75,22 +77,3 @@ userSchema.methods.comparePassword = async function(candidatePassword, cb) {
 const User = mongoose.model('User', userSchema);
 
 module.exports = User;
-
-
-
-
-
-
-
-
-// {
-//     "id": 1
-//     "email": "maryloohoopoo@gmail.com"
-//     "username": "MaryLouHoo",
-//     "password": "poo",
-//     "reviews": [
-//             "review_id": 345,
-//             "review_id": 5462,
-//         ]
-//     "saved_drinks":
-// }
