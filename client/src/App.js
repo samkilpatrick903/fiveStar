@@ -1,11 +1,13 @@
 // import Customs from './testation/Customs'
 // import {Home} from './pages/home'
+
 import {Login} from './pages/Login'
 import {SignUp} from './pages/Signup'
 // import  {NavBar}  from './components/NavBar';
 // import  {FeaturedPost}from './components/booty'
 // import Row from './components/CoinInfo'
 // import {Coins} from './components/Coins'
+
 import React from 'react';
 import {
   ApolloClient,
@@ -13,11 +15,8 @@ import {
   ApolloProvider,
   createHttpLink,
 } from '@apollo/client';
-import { BrowserRouter as Router,Switch, Route ,useLocation } from 'react-router-dom';
-
-
+import { BrowserRouter as Router, Switch, Route, useLocation } from 'react-router-dom';
 import { setContext } from '@apollo/client/link/context';
-
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -44,6 +43,7 @@ const client = new ApolloClient({
 
 function App() {
   return (
+
       <ApolloProvider client={client}>
         <Router>
           <>
@@ -72,6 +72,7 @@ function App() {
        
      </ApolloProvider>
     
+
   );
 }
 
