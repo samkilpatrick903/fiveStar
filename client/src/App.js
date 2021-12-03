@@ -1,3 +1,11 @@
+// import Customs from './testation/Customs'
+// import {Home} from './pages/home'
+import {Login} from './pages/Login'
+import {SignUp} from './pages/signup'
+// import  {NavBar}  from './components/NavBar';
+// import  {FeaturedPost}from './components/booty'
+// import Row from './components/CoinInfo'
+// import {Coins} from './components/Coins'
 import React from 'react';
 import {
   ApolloClient,
@@ -5,24 +13,18 @@ import {
   ApolloProvider,
   createHttpLink,
 } from '@apollo/client';
-import { setContext } from '@apollo/client/link/context';
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Home from './pages/Home';
-// import Signup from './pages/Signup';
-// import Login from './pages/Login';
-// import SingleThought from './pages/SingleThought';
-// import Profile from './pages/Profile';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import { BrowserRouter as Router,Switch, Route ,useLocation } from 'react-router-dom';
 
-// Construct our main GraphQL API endpoint
+
+import { setContext } from '@apollo/client/link/context';
+
+
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
 
-// Construct request middleware that will attach the JWT token to every request as an `authorization` header
 const authLink = setContext((_, { headers }) => {
-  // get the authentication token from local storage if it exists
+  // get the authentication token from local storage if it existsauthLink.concat(httpLink),
   const token = localStorage.getItem('id_token');
   // return the headers to the context so httpLink can read them
   return {
@@ -34,42 +36,42 @@ const authLink = setContext((_, { headers }) => {
 });
 
 const client = new ApolloClient({
-  // Set up our client to execute the `authLink` middleware prior to making the request to our GraphQL API
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
 
+
+
 function App() {
   return (
-    <ApolloProvider client={client}>
-      <Router>
-        <div className="flex-column justify-flex-start min-100-vh">
-          <Header />
-          <div className="container">
-          <BrowserRouter>
-            <Nav />
-          <Switch>
-
-            <Route exact path="/">
-            <Home />
-            </Route>
-
-            <Route exact path="/login">
-              <Login />
-            </Route>
-
-            <Route exact path="/signup">
-              <Signup />
-            </Route>
-
-          </Switch>
-            <Footer />
-        </BrowserRouter>
-          </div>
-          <Footer />
-        </div>
-      </Router>
-    </ApolloProvider>
+      <ApolloProvider client={client}>
+        <Router>
+          <>
+         
+          
+            <Switch>
+              <Route exact path='/' component={Home}/>
+            </Switch>
+            
+              <Route exact path='/login'component={Login} />
+              <Switch>
+              <Route exact path='/signup' component={SignUp}/>
+            </Switch>
+            <Switch>
+              <Route exact path='/coininfo' component={Row}/>
+            </Switch>
+            <Switch>
+              <Route exact path='/coins' component={Coins}/>
+            </Switch>
+            <Switch>
+              <Route exact path='/featured' component={FeaturedPost}/>
+            </Switch> 
+          </>
+        </Router>
+        
+       
+     </ApolloProvider>
+    
   );
 }
 
