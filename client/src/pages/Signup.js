@@ -24,8 +24,8 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Login } from "./Login";
 
 
-import { useMutation } from '@apollo/client';
-import { ADD_USER } from '../utils/mutations';
+// import { useMutation } from '@apollo/client';
+// import { ADD_USER } from '../utils/mutations';
 
 import Auth from '../utils/auth';
 // export function MediaQuery(){
