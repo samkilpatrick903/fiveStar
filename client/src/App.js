@@ -7,6 +7,7 @@ import Nav from './components/Nav';
 // import Row from './components/CoinInfo'
 // import {Coins} from './components/Coins'
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+// import { createMuiTheme, ThemeProvider} from "@material-ui/core"
 
 import React from "react";
 import {
@@ -44,25 +45,26 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+
 function App() {
   return (
-    <ApolloProvider client={client}>
-      <BrowserRouter>
-            <Nav />
-          <Switch>
-            <Route exact path="/">
-            <Home />
-            </Route>
-            <Route exact path="/login">
-              <Login />
-            </Route>
-            <Route exact path="/signup">
-              <SignUp />
-            </Route>
-          </Switch>
-            {/* <Footer /> */}
-        </BrowserRouter>
-    </ApolloProvider>
+      <ApolloProvider client={client}>
+        <BrowserRouter>
+              <Nav />
+            <Switch>
+              <Route exact path="/">
+              <Home />
+              </Route>
+              <Route exact path="/login">
+                <Login />
+              </Route>
+              <Route exact path="/signup">
+                <SignUp />
+              </Route>
+            </Switch>
+              {/* <Footer /> */}
+          </BrowserRouter>
+      </ApolloProvider>
   );
 }
 
