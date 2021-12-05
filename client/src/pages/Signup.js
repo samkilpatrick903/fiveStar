@@ -20,8 +20,9 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Login } from "./Login";
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
-
 import Auth from '../utils/auth';
+import LocalBarTwoToneIcon from '@mui/icons-material/LocalBarTwoTone';
+
 // export function MediaQuery(){
     // const [isDesktop, setDesktop] = useState(window.innerWidth > 1450);
   
@@ -147,10 +148,10 @@ return(
             }}
           >
             <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-              <LockOutlinedIcon />
+              <LocalBarTwoToneIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
-              Sign in
+              Sign Up
             </Typography>
             <Box component="form" noValidate onSubmit={loginSubmit} sx={{ mt: 1 }}>
               <TextField
@@ -158,7 +159,7 @@ return(
                 required
                 fullWidth
                 id="name"
-                label="Full Name"
+                label="Username"
                 name="name"
                 autoComplete="name"
                 autoFocus
@@ -218,8 +219,8 @@ return(
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link href="/Login" variant="body2">
-                    {"Already Have An Account? Login Here"}
+                  <Link href="/login" variant="body2">
+                    {"Already Have An Account?"}
                   </Link>
                 </Grid>
               </Grid>
