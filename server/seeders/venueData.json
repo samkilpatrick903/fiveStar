@@ -12,7 +12,7 @@
         "location_name": "Wonder Bar",
         "address": "11500 Rock Rose Ave suite d, Austin, TX 78758",
         "up_votes": "5",
-        "drink_name": 
+        "drink_names": 
         [
             "Wonder Water", "Austin Jackass", "Livin’ My Best Life"
         ]
@@ -24,7 +24,7 @@
             "5520 Burnet Rd #101, Austin, TX 78756", "1110 West Lynn, Austin, TX", "2500 E. 6TH STREET, Austin, TX", "61 Rainey Street, Austin, TX"
         ],
         "up_votes": "5",
-        "drink_name": 
+        "drink_names": 
         [
             "Mezcal Negroni", "Mexico City Sour", "Spicy Frozen Margarita"
         ]
@@ -33,7 +33,7 @@
         "location_name": "Workhorse Bar",
         "address": "100 N Loop Blvd E Suite B, Austin, TX 78751",
         "up_votes": "5",
-        "drink_name": 
+        "drink_names": 
         [
             "Porch Swing", "Whiskey Rose", "NO-LO Paloma"
         ]
@@ -45,7 +45,7 @@
             "715 W 6th St, Austin, TX 78701", "11420 Rock Rose Ave #130, Austin, TX 78758"
         ],
         "up_votes": "5",
-        "drink_name": 
+        "drink_names": 
         [
             "Waterloo Classic", "Texas-Sized Mimosa", "Bloody Mary"
         ]
