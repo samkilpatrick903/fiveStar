@@ -194,7 +194,7 @@ return(
                 required
                 fullWidth
                 name="repeatPassword"
-                label="repeatPassword"
+                label="Confirm Password"
                 type="password"
                 id="repeatPassword"
                 autoComplete="repeat-password"
