@@ -24,29 +24,11 @@
 //     }]
 // };
 
-//to add: 
-// Lala's
-// Wonderbar
-// Taco Flats
-// Workhorse Bar
-// Dogwood
-// Contigo 
-// The Roosevelt Room
-// Cheer Up Charlie's
-// Kung Fu Saloon
-// Placeholder
-// The Little Darlin'
-//Chuy's 
-// Lustre Pearl
-// Deep Eddy Cabaret
-// The White Horse
-// Cheer Up Charlie's
-// Yellow Jacket Social Club
-// Armadillo Den
-// Zanzibar
-// Easy Tiger
-// Kitty Cohen's
-// Kinda Tropical
-// Hotel San José
-// Frazier's
-// Haymaker
+
+
+
+
+
+
+
+

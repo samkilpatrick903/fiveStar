@@ -50,7 +50,169 @@
             "Waterloo Classic", "Texas-Sized Mimosa", "Bloody Mary"
         ]
     },
-   
-
-
+    {
+        "location_name": "Contigo",
+        "address": "2027 Anchor Ln, Austin, TX 78723",
+        "up_votes": "5",
+        "drink_names": 
+        [
+            "El Pepino", "Frozen Painkiller", "Bee Keeper"
+        ]
+    },
+    {
+        "location_name": "The Roosevelt Room",
+        "address": "307 W 5th St. - Unit B Austin, TX  78701",
+        "up_votes": "5",
+        "drink_names": 
+        [
+            "Shiso Rona", "Death Valley", "Buck to the Future"
+        ]
+    },
+    {
+        "location_name": "Placeholder Tiki Bar",
+        "address": "96 Rainey St. Austin, TX 78701",
+        "up_votes": "5",
+        "drink_names": 
+        [
+            "Tikilla", "The Zombie", "Jungle Bird"
+        ]
+    },
+    {
+        "location_name": "Kung Fu Saloon",
+        "address": 
+        [
+            "11501 Rock Rose Avenue Suite 140 Austin, TX 78758", "716 West 6th Austin, Texas 78701"
+        ],
+        "up_votes": "5",
+        "drink_names": 
+        [
+            "Dingleberry", "512 Pecan Porter", "Pickle Shot"
+        ]
+    },
+    {
+        "location_name": "The Little Darlin'",
+        "address": "6507 Circle S Rd, Austin, TX 78745",
+        "up_votes": "5",
+        "drink_names": 
+        [
+            "Little Darlin' Frozen", "Mimosa Bucket", "Michelada"
+        ]
+    },
+    {
+        "location_name": "Chuy's",
+        "address": 
+        [
+            "1728 Barton Springs Road Austin, TX 78704", "10520 and 10601 N Lamar Blvd Austin, TX 78753", "11680 N. Research Blvd. Austin, TX 78759", "4301 W. William Cannon Dr. Bldg C Austin, TX 78749"
+        ],
+        "up_votes": "5",
+        "drink_names": 
+        [
+            "New Mexican Martini", "Chuy's Famous Ritas", "Chuy's Brew"
+        ]
+    },
+    {
+        "location_name": "Lustre",
+        "address": 
+        [ 
+            "10400 Manchaca Rd, Austin, TX 78748", "114 Linden St, Austin, TX 78702"
+        ],
+        "up_votes": "5",
+        "drink_names": 
+        [
+            "Lustre Lemonade", "El Camino", "Desert Rose"
+        ]
+    },
+    {
+        "location_name": "Deep Eddy Cabert",
+        "address": "2315 Lake Austin Blvd. Austin, TX 78703",
+        "up_votes": "5",
+        "drink_names": 
+        [
+            "Beer", "Wine"
+        ]
+    },
+    {
+        "location_name": "Yellow Jacket Social Club",
+        "address": "1704 E. 5th ST. Austin, TX 78702",
+        "up_votes": "5",
+        "drink_names": 
+        [
+            "The Hot Tamale", "The Peppermint Patty", "Irished Coffee"
+        ]
+    },
+    {
+        "location_name": "Armadillo Den",
+        "address": "10106 Menchaca Rd, Austin, TX 78748",
+        "up_votes": "5",
+        "drink_names": 
+        [
+            "Skinny Spicy Mamacita Rita", "Fords Ranch Water", "Rebas Fancy"
+        ]
+    },
+    {
+        "location_name": "Zanzibar",
+        "address": "304 E. Cesar Chavez Street, Unit 700, Austin, TX 78701 ",
+        "up_votes": "5",
+        "drink_names": 
+        [
+            "The Devil & the Deep Blue Sea", "Feels Like Summer", "Duke's Pearl"
+        ]
+    },
+    {
+        "location_name": "Easy Tiger",
+        "address": 
+        [
+            "6406 N I-35 Frontage Rd. Suite 1100 Austin, TX 78752 ", "3508 S Lamar Blvd Suite 200 Austin, TX 78704", "1501 E. 7th St. Austin, TX 78702"
+        ],
+        "up_votes": "5",
+        "drink_names": 
+        [
+            "Lucky Buck", "Rye of the Tiger", "Cadillac Coffee"
+        ]
+    },
+    {
+        "location_name": "Kitty Cohen's",
+        "address": "2211 WEBBERVILLE RD. AUSTIN, TX 78702",
+        "up_votes": "5",
+        "drink_names": 
+        [
+            "Frozen Eggnog", "Hawt Apple Toddy", "Maker's Mark Hot Toddy"
+        ]
+    },
+    {
+        "location_name": "Kinda Tropical",
+        "address": "3501 E 7TH ST, AUSTIN, TX 78702",
+        "up_votes": "5",
+        "drink_names": 
+        [
+            "Tumeric Pina Colada", "Labuff Stuff", "Mango Margirita"
+        ]
+    },
+    {
+        "location_name": "Hotel San José",
+        "address": "1316 South Congress Avenue, Austin, TX 78704",
+        "up_votes": "5",
+        "drink_names": 
+        [
+            "Gin Blossoms", "Frosé", "Spicy Margiritas"
+        ]
+    },
+    {
+        "location_name": "Frazier's",
+        "address": "2538 Elmont Drive, Austin, TX, 78741",
+        "up_votes": "5",
+        "drink_names": 
+        [
+            "Lavendar Lemonade", "Bahama Mama", "Dahlia"
+        ]
+    },
+    {
+        "location_name": "Haymaker",
+        "address": "2310 MANOR RD. AUSTIN, TX 78722",
+        "up_votes": "5",
+        "drink_names": 
+        [
+            "White Trash Beers", "Beer Ritas", "Mexi-cans"
+        ]
+    }
 ]
