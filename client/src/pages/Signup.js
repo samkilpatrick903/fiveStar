@@ -128,7 +128,7 @@ return(
           sm={4}
           md={7}
           sx={{
-            backgroundImage: 'url(https://drive.google.com/file/d/1wkRdjwM2qxcBSY-tqTf3tbf0vCMZMjl1/view?usp=sharing)',
+            backgroundImage: 'url(https://i.imgur.com/aRWuuwn.jpg)',
             backgroundRepeat: 'no-repeat',
             backgroundColor: (t) =>
               t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
