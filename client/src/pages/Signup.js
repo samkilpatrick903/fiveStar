@@ -1,6 +1,3 @@
-
-
-
 import React from "react";
 import { styled } from "@mui/system";
 import { Typography } from "@mui/material";
@@ -12,7 +9,6 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 // import { LoginDesktop } from "../components/LoginDesktop";
 import { Redirect } from "react-router-dom";
-
 import Avatar from '@mui/material/Avatar';
 import CssBaseline from '@mui/material/CssBaseline';
 import Link from '@mui/material/Link';
@@ -22,8 +18,6 @@ import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Login } from "./Login";
-
-
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 
@@ -86,7 +80,7 @@ const LogoImg="./assets/img/logo.png"
 const theme = createTheme();
 
 
-export function SignUp(){
+export default function SignUp(){
   const [formState, setFormState] = useState({
     name: '',
     email: '',

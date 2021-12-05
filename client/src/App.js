@@ -1,11 +1,12 @@
 // import Customs from './testation/Customs'
 import Home from './pages/Home'
-import { Login } from "./pages/Login";
-import { SignUp } from "./pages/Signup";
-// import  {NavBar}  from './components/NavBar';
+import Login from "./pages/Login";
+import SignUp from "./pages/Signup";
+import Nav from './components/Nav';
 // import  {FeaturedPost}from './components/booty'
 // import Row from './components/CoinInfo'
 // import {Coins} from './components/Coins'
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import React from "react";
 import {
@@ -14,12 +15,12 @@ import {
   ApolloProvider,
   createHttpLink,
 } from "@apollo/client";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  useLocation,
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Switch,
+//   Route,
+//   useLocation,
+// } from "react-router-dom";
 import { setContext } from "@apollo/client/link/context";
 
 const httpLink = createHttpLink({
@@ -46,26 +47,21 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <Router>
-        <>
+      <BrowserRouter>
+            <Nav />
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/">
+            <Home />
+            </Route>
+            <Route exact path="/login">
+              <Login />
+            </Route>
+            <Route exact path="/signup">
+              <SignUp />
+            </Route>
           </Switch>
-          <Route exact path="/login" component={Login} />
-          <Switch>
-            <Route exact path="/signup" component={SignUp} />
-          </Switch>
-          {/* <Switch>
-              <Route exact path='/coininfo' component={Row}/>
-            </Switch> */}
-          {/* <Switch>
-              <Route exact path='/coins' component={Coins}/>
-            </Switch>
-            <Switch>
-              <Route exact path='/featured' component={FeaturedPost}/>
-            </Switch>  */}
-        </>
-      </Router>
+            {/* <Footer /> */}
+        </BrowserRouter>
     </ApolloProvider>
   );
 }
