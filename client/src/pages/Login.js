@@ -67,12 +67,9 @@ const LoginForm = styled("form")({
   maxWidth: "30rem",
 });
 
-
 const theme = createTheme();
 
-
-
-export function Login(props) {
+export default function Login(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error, data }] = useMutation(LOGIN_USER);
 
