@@ -1,3 +1,4 @@
-// const Profile = require('./Profile');
+const User = require('./User');
+const Venue = require('./Venue');
 
-// module.exports = { Profile };
+module.exports = { User, Venue };
