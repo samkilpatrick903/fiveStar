@@ -16,8 +16,21 @@ type Venue{
     location_name: String!
     address: [String]!
     up_votes: Int
-    drink_names: [String]
-    user_drinks:[String]
+    drink_names: [Drinks]
+}
+type Recommend {
+    _id: ID!
+    Drinkid: Venue
+    users: Users
+}
+
+type Drinks {
+    _id: ID!
+    drinkName: String!
+    RecommendationCount: Int
+    Venueid: Venue
+    recommendations: Users
+    date: String
 }
 
 type Auth {
@@ -25,13 +38,19 @@ type Auth {
     user: User
 }
 
-type Query{
-    me: User
-}
+type Query {
+    venues: [Venue]
+    drink_names: [Drinks]
+    users: [User]
+    recommendations: [Recommendations]
+    # Define a query with an ID parameter to return a single Class object
+    class(id: ID!): Class
+  }
 
 type Mutation {
     login(email: String!, password: String!): Auth
     addUser(name: String!, email: String!, password: String!): Auth
+    addDrink(drinkName: String!): Drinks
 }
 
 
