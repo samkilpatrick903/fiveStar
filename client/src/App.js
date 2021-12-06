@@ -1,16 +1,9 @@
-// import Customs from './testation/Customs'
 import Home from './pages/Home'
 import Login from "./pages/Login";
 import SignUp from "./pages/Signup";
 import Nav from './components/Nav';
 import Profile from "./pages/Profile";
-
-// import  {FeaturedPost}from './components/booty'
-// import Row from './components/CoinInfo'
-// import {Coins} from './components/Coins'
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-// import { createMuiTheme, ThemeProvider} from "@material-ui/core"
-
 import React from "react";
 import {
   ApolloClient,
@@ -18,12 +11,6 @@ import {
   ApolloProvider,
   createHttpLink,
 } from "@apollo/client";
-// import {
-//   BrowserRouter as Router,
-//   Switch,
-//   Route,
-//   useLocation,
-// } from "react-router-dom";
 import { setContext } from "@apollo/client/link/context";
 
 const httpLink = createHttpLink({
@@ -67,7 +54,6 @@ function App() {
                 <Profile />
               </Route>
             </Switch>
-              {/* <Footer /> */}
           </BrowserRouter>
       </ApolloProvider>
   );
