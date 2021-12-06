@@ -15,7 +15,7 @@ import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Image from '../assets/beer.jpg'; 
 import SearchModal from '../components/SearchModal';
-
+import {Below} from '../components/Below'
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 const theme = createTheme();
 
@@ -63,40 +63,34 @@ export default function Home() {
             </Stack>
           </Container>
         </Box>
-        <Container sx={{backgroundImage: `url(${Image})`, py: 8 }} maxWidth="lg">
-          {/* End hero unit */}
-          <Grid container spacing={4}>
-            {cards.map((card) => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
-                <Card sx={{ maxHeight: '100%', display: 'flex', flexDirection: 'column' }}>
-                  {/* <CardMedia
-                    component="img"
-                    sx={{
-                      // 16:9
-                      pt: '100%',
-                    }}
-                    image="https://source.unsplash.com/random"
-                    alt="random"
-                  /> */}
-                  <CardContent sx={{ flexGrow: 1 }}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      Heading
-                    </Typography>
-                    <Typography>
-                      This is a media card. You can use this section to describe the
-                      content.
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Button size="small">View</Button>
-                    <Button size="small">Edit</Button>
-                  </CardActions>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
+       <Below/>
       </main>
     </ThemeProvider>
   );
 }
+{/* <Container sx={{backgroundImage: `url(${Image})`, py: 8 }} maxWidth="lg">
+
+<Grid container spacing={4}>
+  {cards.map((card) => (
+    <Grid item key={card} xs={12} sm={6} md={4}>
+      <Card sx={{ maxHeight: '100%', display: 'flex', flexDirection: 'column' }}>
+     
+        <CardContent sx={{ flexGrow: 1 }}>
+          <Typography gutterBottom variant="h5" component="h2">
+            Heading
+          </Typography>
+          <Typography>
+            This is a media card. You can use this section to describe the
+            content.
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Button size="small">View</Button>
+          <Button size="small">Edit</Button>
+        </CardActions>
+      </Card>
+    </Grid>
+  ))}
+</Grid>
+</Container> 
+*/}
