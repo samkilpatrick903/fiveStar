@@ -10,7 +10,18 @@ type User{
     bio:String
     date_joined:String
 }
-
+type Drink{
+    _id:ID!
+    venue:[Venue]!
+    drinkName:String!
+    recommendationCount:Int
+    date:String
+}
+type Recommend{
+    _id:ID!
+    venue_id:Venue!
+    votes:[User]!
+}
 type Venue{
     _id: ID!
     location_name: String!
@@ -27,6 +38,12 @@ type Auth {
 
 type Query{
     me: User
+    venues:[Venue]!
+    drinks:[Drink]!
+    recommends:[Recommend]!
+    users:[User]!
+    user(userid: ID!):User
+    venue(venueid: ID!):Venue
 }
 
 type Mutation {
