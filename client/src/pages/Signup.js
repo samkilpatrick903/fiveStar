@@ -50,7 +50,8 @@ const LogoImg="./assets/img/logo.png"
 //STYLING WILL COME BACK AND CHANGE TO SX
 
  const MainDiv=styled("div")({
-    display: "flex"
+    display: "flex",
+
     })
 
  const LoginFormSection=styled("section")({
@@ -137,6 +138,7 @@ return(
             backgroundPosition: 'center',
           }}
         />
+        
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
           <Box
             sx={{
