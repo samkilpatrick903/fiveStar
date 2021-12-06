@@ -175,6 +175,8 @@ export default function Nav () {
               </Badge> 
               </Link>
             </IconButton>
+            
+            
 
             <Search>
             <SearchIconWrapper>
