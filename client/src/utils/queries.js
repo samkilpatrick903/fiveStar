@@ -11,3 +11,17 @@ export const QUERY_USER = gql`
     }
   }
 `;
+
+export const GET_SEARCH = gql`
+  {
+    venues{
+   location_name
+   address
+   up_votes
+   drink_names
+   user_drinks
+    }
+  }
+
+  
+`;
