@@ -56,7 +56,7 @@ export default function SearchModal() {
    */
   return (
     <div>
-      <Button variant="contained" onClick={handleClickOpen}>
+      <Button variant="contained" onClick={handleClickOpen} sx={{backgroundColor: '#8b1f07', fontFamily: 'Monteserrat', fontSize: "1em"}}>
         Search Drinks
       </Button>
       <Dialog

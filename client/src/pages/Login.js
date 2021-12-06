@@ -177,11 +177,11 @@ export default function Login(props) {
                 control={<Checkbox value="remember" color="primary" />}
                 label="Remember me"
               />
-              <Button
+              <Button 
                 type="submit"
                 fullWidth
                 variant="contained"
-                sx={{ mt: 3, mb: 2 }}
+                sx={{ mt: 3, mb: 2, backgroundColor: '#D9310B'}}
               >
                 Sign In
               </Button>
