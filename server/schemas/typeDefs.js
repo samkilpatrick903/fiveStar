@@ -16,7 +16,7 @@ type Venue{
     location_name: String!
     address: [String]!
     up_votes: Int
-    drink_name: [String]
+    drink_names: [String]
     user_drinks:[String]
 }
 

@@ -15,7 +15,7 @@ const venueSchema = new Schema({
     },
   ],
   up_votes: Number,
-  drink_name: [
+  drink_names: [
     {
       type: String,
     },
