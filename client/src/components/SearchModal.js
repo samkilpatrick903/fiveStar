@@ -15,6 +15,8 @@ import Fingerprint from "@mui/icons-material/Fingerprint";
 import { Box } from "@mui/system";
 import { TextField } from "@mui/material";
 import { InputAdornment } from "@mui/material";
+import useQuery from '@apollo/client'
+import { GET_SEARCH } from "../utils/queries"
 /*
 
 IMPORT QUERY TO FIND DRINKS BASED ON SEARCH
@@ -35,20 +37,7 @@ export default function SearchModal() {
     setOpen(false);
   };
 
-  const state = [
-    {
-      location_name: "Lala's Little Nugget",
-      address: "2207 Justin Ln, Austin, TX 78757",
-      up_votes: "5",
-      drink_names: ["Naughty Nugget", "Buddy's Elf Fashioned", "Lump of Cole"],
-    },
-    {
-      location_name: "Wonder Bar",
-      address: "11500 Rock Rose Ave suite d, Austin, TX 78758",
-      up_votes: "5",
-      drink_names: ["Wonder Water", "Austin Jackass", "Livin’ My Best Life"],
-    },
-  ];
+
 
   /*
    * QUERY MADE HERE THEN MAPPED OVER AND STORED IN STATE OR OBJECT

@@ -27,22 +27,12 @@ type Venue{
     location_name: String!
     address: [String]!
     up_votes: Int
-    drink_names: [Drinks]
-}
-type Recommend {
-    _id: ID!
-    Drinkid: Venue
-    users: Users
+    drink_names: [Drink]
+    user_drinks:[User]
 }
 
-type Drinks {
-    _id: ID!
-    drinkName: String!
-    RecommendationCount: Int
-    Venueid: Venue
-    recommendations: Users
-    date: String
-}
+
+
 
 type Auth {
     token: ID!
@@ -62,7 +52,7 @@ type Query{
 type Mutation {
     login(email: String!, password: String!): Auth
     addUser(name: String!, email: String!, password: String!): Auth
-    addDrink(drinkName: String!): Drinks
+    addDrink(drinkName: String!): Drink
 }
 
 
