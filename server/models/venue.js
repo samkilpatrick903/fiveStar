@@ -20,6 +20,13 @@ const venueSchema = new Schema({
       type: String,
     },
   ],
+  drinkName: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Drinks'
+    }
+  ]
+
 });
 
 const Venue = model("Venue", venueSchema);
