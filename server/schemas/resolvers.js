@@ -7,28 +7,59 @@ const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
-    venues: async () => {
-        return await Venue.find({}).populate('Recommend');
-      },
-    drink_names: async () => {
-        return await Drinks.find({}).populate('Venue');
-      },
-    users: async () => {
-        return await User.find({}).populate('Recommend');
-      },
-    recommendations: async () => {
-        return await Recommendation.find({}).populate('Yomama').populate({
-            path: 'Yomama',
-            populate: 'YoDaddy'
-        });
-      }
+    users: async ()=>{
+      return await User.find();
+  },
+  user: async (parent,{userid})=>{
+    return await User.findOne({_id:userid});
+},  
+   me: async (parent, args, context) => {
+  if (context.user) {
+    return User.findOne({ _id: context.user._id });
+  }
+  throw new AuthenticationError('You need to be logged in!');
+},
+venues:async ()=>{
+  return await Venue.find({}).populate(
+    "drinks"
+  )
+},
+venue:async (parent,{venueid})=>{
+  return await Venue.findOne({_id:venueid})
+
   
+}
   },
   Mutation: {
+<<<<<<< HEAD
+    addUser: async (parent, { name, email, password }) => {
+      const profile = await User.create({ name, email, password });
+      const token = signToken(profile);
+
+      return { token, profile };
+    },
+    login: async (parent, { email, password }) => {
+      const profile = await User.findOne({ email });
+
+      if (!profile) {
+        throw new AuthenticationError('No profile with this email found!');
+      }
+
+      const correctPw = await profile.isCorrectPassword(password);
+
+      if (!correctPw) {
+        throw new AuthenticationError('Incorrect password!');
+      }
+
+      const token = signToken(profile);
+      return { token, profile };
+    },
+=======
     addDrink: async (parent,{drinkName}) => {
         return await Drinks.create({drinkName});
     },
 
+>>>>>>> 41061cf8f4b88e09a9ac88f0b63b8f9d5f6aefc0
   },
 };
 

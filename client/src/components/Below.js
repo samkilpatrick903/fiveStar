@@ -37,19 +37,19 @@ export const Below=()=>{
             item
             //position="initial"
             >
-            <div class="col-sm-12 justify-content-center">
-    <div class="card mb-3">
-        <div class="row no-gutters">
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">{loc.location_name}</h5>
-                    <p class="card-text">{loc.address}</p>
+            <div className="col-sm-12 justify-content-center">
+    <div className="card mb-3">
+        <div className="row no-gutters">
+            <div className="col-md-8">
+                <div className="card-body">
+                    <h5 className="card-title">{loc.location_name}</h5>
+                    <p className="card-text">{loc.address}</p>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div className="col-md-4">
                 {/* <img 
                 
-                class = "card-img" src="https://i.imgur.com/DkjnUMh.jpg" alt="keto"/> */}
+                className = "card-img" src="https://i.imgur.com/DkjnUMh.jpg" alt="keto"/> */}
             </div>
         </div>
     </div>

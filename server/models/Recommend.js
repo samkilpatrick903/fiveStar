@@ -3,16 +3,15 @@ const Schema = mongoose.Schema
 const ObjectId = Schema.Types.ObjectId;
 
 const RecommendSchema = new Schema({
-    Venueid: {
+    venue_id: {
         type: ObjectId,
         ref: 'Venue'
-    }
-    ,
+    },
     votes: [{
-        user: {
+       
             type: ObjectId,
             ref: 'User'
-        }
+        
     }]
 })
 
