@@ -3,6 +3,8 @@ import Home from './pages/Home'
 import Login from "./pages/Login";
 import SignUp from "./pages/Signup";
 import Nav from './components/Nav';
+import Profile from "./pages/Profile";
+
 // import  {FeaturedPost}from './components/booty'
 // import Row from './components/CoinInfo'
 // import {Coins} from './components/Coins'
@@ -60,6 +62,9 @@ function App() {
               </Route>
               <Route exact path="/signup">
                 <SignUp />
+              </Route>
+              <Route exact path="/profile">
+                <Profile />
               </Route>
             </Switch>
               {/* <Footer /> */}
