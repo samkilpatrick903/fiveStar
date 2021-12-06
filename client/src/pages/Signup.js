@@ -117,7 +117,6 @@ export default function SignUp(){
         // console.log(loginBody.get('password'))
         // console.log(loginBody.get('repeatPassword'))
         // return <Redirect to="/"/>
-
     }   
 
 return(  
@@ -210,7 +209,7 @@ return(
                 type="submit"
                 fullWidth
                 variant="contained"
-                sx={{ mt: 3, mb: 2 }}
+                sx={{ mt: 3, mb: 2, backgroundColor: '#D9310B' }}
               >
                 Sign Up
               </Button>
