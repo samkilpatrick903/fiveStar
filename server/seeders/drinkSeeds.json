@@ -2,14 +2,12 @@
 {
     "venue":"61ae4a6d5092aa0dedc52b00",
     "drinkName":"vodka",
-    "recommendationCount":"2",
     "recommendations":"61ae7fa7d3ec26dc39754e66",
     "date":"2021-12-06T17:37:49.426+00:00"
 },
 {
     "venue":"61ae4a6d5092aa0dedc52b00",
     "drinkName":"wine",
-    "recommendationCount":"2",
     "recommendations":"61ae7fa7d3ec26dc39754e66",
     "date":"2021-12-06T17:37:49.426+00:00"
 }

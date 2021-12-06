@@ -11,9 +11,6 @@ const DrinksSchema = new Schema({
         type: String,
         required: true
     },
-    RecommendationCount: {
-        type: Number
-    },
     recommendations: [{
           type: ObjectId ,
           ref:'User'

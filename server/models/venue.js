@@ -1,8 +1,13 @@
 const { Schema, model } = require("mongoose");
+const ObjectId = Schema.Types.ObjectId;
 
 
 
 const venueSchema = new Schema({
+  Venueid: {
+    type: ObjectId,
+    required: true,
+  },
   location_name: {
     type: String,
     required: true,
