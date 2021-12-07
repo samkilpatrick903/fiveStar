@@ -10,13 +10,11 @@ import PersonAddAltTwoToneIcon from '@mui/icons-material/PersonAddAltTwoTone';
 import LiquorTwoToneIcon from '@mui/icons-material/LiquorTwoTone';
 import HomeTwoToneIcon from '@mui/icons-material/HomeTwoTone';
 
-
 export default function Nav () {
   return (
     <Box sx={{ flexGrow: 1}}>
       <AppBar sx={{backgroundColor: '#D9310B'}} position="static" >
         <Toolbar sx={{boxShadow: 10, mb: .2}}>
-          
           <IconButton size="large" color="inherit">
             <Link to="/"> 
               <Badge> 
