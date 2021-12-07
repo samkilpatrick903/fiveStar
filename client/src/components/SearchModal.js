@@ -72,18 +72,18 @@ const [search,setSearch]=React.useState("")
    *
    */
   const HandleSearch=(e)=>{
-    e.preventDefault();
-    //setSearch(true)
-    const loginBody = new FormData(e.currentTarget);
-    const x = loginBody.get("searchInput");
-    if(loading) return "loading..."
-    setSearch(x)
-    console.log(data)
-    if (!searchInput) {
-      return false;
-    }
-    const response =useQuery()
-  }
+  //   e.preventDefault();
+  //   //setSearch(true)
+  //   const loginBody = new FormData(e.currentTarget);
+  //   const x = loginBody.get("searchInput");
+  //   if(loading) return "loading..."
+  //   setSearch(x)
+  //   console.log(data)
+  //   if (!searchInput) {
+  //     return false;
+  //   }
+  //   const response =useQuery()
+   }
   
 
   return (
