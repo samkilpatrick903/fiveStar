@@ -38,7 +38,20 @@ export default function SearchModal() {
   };
 
 
-
+  const state = [
+    {
+        location_name: "Lala's Little Nugget",
+        address: "2207 Justin Ln, Austin, TX 78757",
+        up_votes: "5",
+        drink_names: ["Naughty Nugget", "Buddy's Elf Fashioned", "Lump of Cole"],
+    },
+    {
+        location_name: "Wonder Bar",
+        address: "11500 Rock Rose Ave Suite D, Austin, TX 78758",
+        up_votes: "5",
+        drink_names: ["Wonder Water", "Austin Jackass", "Livin’ My Best Life"],
+    },
+];
   /*
    * QUERY MADE HERE THEN MAPPED OVER AND STORED IN STATE OR OBJECT
    *
