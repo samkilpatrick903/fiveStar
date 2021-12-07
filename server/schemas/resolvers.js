@@ -22,8 +22,8 @@ const resolvers = {
     venues: async () => {
       return await Venue.find({})
     },
-    venue: async (parent, { venueid }) => {
-      return await Venue.findOne({ _id: venueid }).populate('user_drinks')
+    venue: async (parent, { name }) => {
+      return await Venue.findOne({ name: location_name }).populate('user_drinks')
     },
   },
   Mutation: {
