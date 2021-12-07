@@ -9,15 +9,16 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import CssBaseline from "@mui/material/CssBaseline";
 import Grid from "@mui/material/Grid";
-import Stack from "@mui/material/Stack";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Link from "@mui/material/Link";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 // import Image from '../assets/beer.jpg';
-//import Image from '../assets/marg.jpg'
+import marg from '../assets/marg.jpg'
 import Logo from "../assets/ML_LOGO.png";
+import Avatar from '@mui/material/Avatar';
+import Stack from '@mui/material/Stack';
 
 // const cards = [1, 2, 3];
 const theme = createTheme();
@@ -90,22 +91,28 @@ export default function Profile() {
                 <Container maxWidth="sm">
                     <Card
                         sx={{
-                            backgroundColor: "transparent",
+                            backgroundColor: "transparent", m: 5, 
                         }}
                     >
                         <CardMedia component="img" src={Logo} title="logo" />
                     </Card>
                     <Typography
-                        variant="h5"
+                        variant="h3"
                         align="center"
                         color="text.secondary"
                         paragraph
                     >
-                        User Profile
+                        Welcome, Username
                     </Typography>
+
+                    <Avatar
+                        alt="ML"
+                        src= {marg}
+                        sx={{ width: 60, height: 60, bgcolor: '#D9310B'  }}
+                    />
                 </Container>
 
-                <Container sx={{ py: 8, justifyContent: "center" }} maxWidth="lg">
+                <Container sx={{ py: 8, justifyContent: "center"}} maxWidth="lg">
                     <Grid container spacing={4}>
                         {cards.map((card) => (
                             <Grid item key={card.location_name} xs={12} sm={6} md={4}>
@@ -118,7 +125,7 @@ export default function Profile() {
                                 >
                                     <CardContent sx={{ flexGrow: 1 }}>
                                         <Typography
-                                            sx={{ display: "flex", justifyContent: "center" }}
+                                            sx={{ display: "flex", justifyContent: "center", fontFamily: 'Monteserrat' }}
                                             gutterBottom
                                             variant="h5"
                                             component="h2"
@@ -128,7 +135,7 @@ export default function Profile() {
 
                                         {card.drink_names.map((drink, index) => (
                                             <Typography
-                                                sx={{ display: "flex", justifyContent: "center" }}
+                                                sx={{ display: "flex", justifyContent: "center", fontFamily: 'Monteserrat' }}
                                                 key={index}
                                             >
                                                 {drink}
@@ -155,10 +162,13 @@ export default function Profile() {
                                         id="modal-modal-title"
                                         variant="h6"
                                         component="h2"
+                                        justifyContent="center"
+                                        display="flex"
+                                        fontFamily='Monteserrat'
                                     >
-                                        Address:
+                                        Address
                                     </Typography>
-                                    <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                                    <Typography id="modal-modal-description" sx={{ mt: 2, justifyContent: "center", display: "flex", fontFamily: 'Monteserrat' }}>
                                         Duis mollis, est non commodo luctus, nisi erat porttitor
                                         ligula.
                                     </Typography>
