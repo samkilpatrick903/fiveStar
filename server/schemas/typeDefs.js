@@ -48,7 +48,7 @@ type Query{
     recommends:[Recommend]!
     users:[User]!
     user(userid: ID!):User
-    venue(name: String!):Venue
+    venue(location_name: String!):Venue
 }
 
 type Mutation {
