@@ -14,12 +14,10 @@ export const QUERY_USER = gql`
 
 export const GET_SEARCH = gql`
  query venue($location_name:String!) {
-    venue(name:$location_name){
-   location_name
+    venue(location_name:$location_name){
    address
-   up_votes
-   drink_names
-   user_drinks
+   
+   
     }
   }
 
