@@ -20,7 +20,7 @@ import Logo from "../assets/ML_LOGO.png";
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 
-// const cards = [1, 2, 3];
+
 const theme = createTheme();
 
 const cards = [
