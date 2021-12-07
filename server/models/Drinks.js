@@ -13,7 +13,7 @@ const DrinkSchema = new Schema({
     },
     recommendations: [{
           type: ObjectId ,
-          ref:'User'
+          ref:'Recommend'
     }],
     date: {
         type: Date,

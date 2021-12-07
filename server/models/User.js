@@ -36,10 +36,10 @@ const userSchema = new Schema({
 	picture: {
 		type: String
 	},
-	bio: {
-		type: String,
-		maxLength: [ 255, 'Your bio can only be 255 characters long' ]
-	},
+	rec: [{
+		type: ObjectId,
+		ref:'Recommend'
+	}],
 	date_joined: {
         type: Date,
         default: Date.now,
