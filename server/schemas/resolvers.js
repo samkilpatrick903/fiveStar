@@ -31,35 +31,10 @@ venue:async (parent,{venueid})=>{
 }
   },
   Mutation: {
-<<<<<<< HEAD
-    addUser: async (parent, { name, email, password }) => {
-      const profile = await User.create({ name, email, password });
-      const token = signToken(profile);
-
-      return { token, profile };
-    },
-    login: async (parent, { email, password }) => {
-      const profile = await User.findOne({ email });
-
-      if (!profile) {
-        throw new AuthenticationError('No profile with this email found!');
-      }
-
-      const correctPw = await profile.isCorrectPassword(password);
-
-      if (!correctPw) {
-        throw new AuthenticationError('Incorrect password!');
-      }
-
-      const token = signToken(profile);
-      return { token, profile };
-    },
-=======
     addDrink: async (parent,{drinkName}) => {
         return await Drinks.create({drinkName});
     },
 
->>>>>>> 41061cf8f4b88e09a9ac88f0b63b8f9d5f6aefc0
   },
 };
 
