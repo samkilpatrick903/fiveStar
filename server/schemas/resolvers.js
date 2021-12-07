@@ -26,6 +26,7 @@ const resolvers = {
       return await Venue.findOne({ _id: venueid });
     },
   },
+}
 
 
 module.exports = resolvers;
