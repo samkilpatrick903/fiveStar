@@ -22,8 +22,8 @@ const resolvers = {
     venues: async () => {
       return await Venue.find({})
     },
-    venue: async (parent, { venueid }) => {
-      return await Venue.findOne({ _id: venueid });
+    venue: async (parent, { name }) => {
+      return await Venue.findOne({ name: location_name }).populate('user_drinks')
     },
   },
   Mutation: {
@@ -49,6 +49,57 @@ const resolvers = {
 
       return { token, user };
     },
+    addVenue: async (parent, args, context) => {
+			//! add user context to authenticate
+			// if (context.user) {
+			//! get rid of userId when we can user the context to our advantage
+			const { location_name, address, drink_names } = args;
+			const newVenue = await Venue.create({
+				location_name: location_name,
+				address: address,
+        drink_names: drink_names
+
+			});
+		
+			return newVenue;
+			// }
+			// throw new AuthenticationError('You need to be logged in to do that!');
+		},
+    addDrink:async(parent,args,context)=>{
+      const {drinkName}=args
+      const newDrink=await Drink.create({
+        drinkName:drinkName
+      })
+      return newDrink
+    },
+    addReview: async (parent, args, context) => {
+			//! get rid of userId when we can use the context to our advantage
+			const { userid, name,drink,venue_id,count ,recommendations} = args;
+			//! add user context to authenticate
+			// if (context.user._id) {
+			await Recommendation.create(
+				// would user context instead here
+				{venue_id: venue_id,
+        count:count,
+        drink:drink
+        },
+				
+				{ new: true }
+			)
+      await Drink.findOneAndUpdate(
+				{ recommendations: recommendations },
+				{
+					$addToSet: {
+						recommendations: {
+							_id: userid
+						}
+					}
+				},
+				{ new: true }
+			);
+			// }
+			// throw new AuthenticationError('You need to be logged in to do that!');
+		},
   
   },
 }

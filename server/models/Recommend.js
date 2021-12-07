@@ -12,7 +12,11 @@ const RecommendSchema = new Schema({
             type: ObjectId,
             ref: 'User'
         
-    }]
+    }],
+    count:{
+    type:Number
+    }
+  ,
 })
 
 const Recommend = mongoose.model('Recommendations', RecommendSchema)

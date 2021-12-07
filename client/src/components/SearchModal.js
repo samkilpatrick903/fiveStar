@@ -15,7 +15,7 @@ import Fingerprint from "@mui/icons-material/Fingerprint";
 import { Box } from "@mui/system";
 import { TextField } from "@mui/material";
 import { InputAdornment } from "@mui/material";
-import useQuery from '@apollo/client'
+import { useQuery,useMutation } from '@apollo/client';
 import { GET_SEARCH } from "../utils/queries"
 /*
 
@@ -43,7 +43,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 export default function SearchModal() {
   const [open, setOpen] = React.useState(false);
-
+const [search,setSearch]=React.useState("")
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -71,6 +71,21 @@ export default function SearchModal() {
    * QUERY MADE HERE THEN MAPPED OVER AND STORED IN STATE OR OBJECT
    *
    */
+  const HandleSearch=(e)=>{
+    e.preventDefault();
+    //setSearch(true)
+    const loginBody = new FormData(e.currentTarget);
+    const x = loginBody.get("searchInput");
+    if(loading) return "loading..."
+    setSearch(x)
+    console.log(data)
+    if (!searchInput) {
+      return false;
+    }
+    const response =useQuery()
+  }
+  
+
   return (
     <div>
       <Button variant="contained" onClick={handleClickOpen} sx={{backgroundColor: '#8b1f07', fontFamily: 'Monteserrat', fontSize: "1em"}}>
@@ -92,7 +107,7 @@ export default function SearchModal() {
             >
               <CloseIcon />
             </IconButton>
-            <Box sx={{ pl: "1rem" }} component="form">
+            <Box sx={{ pl: "1rem" }} component="form" onSubmit={HandleSearch}>
               <TextField
                 variant="outlined"
                 endAdornment
@@ -113,6 +128,7 @@ export default function SearchModal() {
                         aria-label="fingerprint"
                         color="secondary"
                         type="submit"
+                        
                       >
                         <Fingerprint />
                       </IconButton>
