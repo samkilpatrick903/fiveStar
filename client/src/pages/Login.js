@@ -80,7 +80,7 @@ export default function Login() {
       [name]: value,
     });
   }
-  const handleLogin = async (event) => {
+  const HandleLogin = async (event) => {
     event.preventDefault();
 
     console.log(formState);
@@ -147,7 +147,7 @@ export default function Login() {
             <Box
               component="form"
               noValidate
-              onSubmit={handleLogin}
+              onSubmit={HandleLogin}
               sx={{ mt: 1 }}
             >
               <TextField
