@@ -15,7 +15,7 @@ import Fingerprint from "@mui/icons-material/Fingerprint";
 import { Box } from "@mui/system";
 import { TextField } from "@mui/material";
 import { InputAdornment } from "@mui/material";
-import { useQuery,useMutation } from '@apollo/client';
+import { useLazyQuery } from '@apollo/client';
 import { GET_SEARCH } from "../utils/queries"
 /*
 
@@ -43,7 +43,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 export default function SearchModal() {
   const [open, setOpen] = React.useState(false);
-const [search,setSearch]=React.useState("")
+  const [search,setSearch]=React.useState("")
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -71,21 +71,36 @@ const [search,setSearch]=React.useState("")
    * QUERY MADE HERE THEN MAPPED OVER AND STORED IN STATE OR OBJECT
    *
    */
-  const HandleSearch=(e)=>{
-  //   e.preventDefault();
-  //   //setSearch(true)
-  //   const loginBody = new FormData(e.currentTarget);
-  //   const x = loginBody.get("searchInput");
-  //   if(loading) return "loading..."
-  //   setSearch(x)
-  //   console.log(data)
-  //   if (!searchInput) {
-  //     return false;
-  //   }
-  //   const response =useQuery()
-   }
-  
 
+  const handleChange = (event) => {
+
+    const { name, value } = event.target;
+    setSearch({
+      ...search,
+      [name]: value,
+    });
+  }
+  const HandleSearch=async(e)=>{
+    e.preventDefault();
+    //setSearch(true)
+  
+      // const loginBody = new FormData(e.currentTarget);
+      // const x = loginBody.get("searchInput");
+      // setSearch(x)
+      console.log(search)  
+ 
+     
+    }
+    const [getSearch,{loading,data}]= useLazyQuery(GET_SEARCH,{
+      variables:search
+    })
+    //const result=data || {}
+    if(loading) return "loading..."
+    console.log(search)
+const response=data
+console.log(data)
+    //const result=data
+    console.log(getSearch)
   return (
     <div>
       <Button variant="contained" onClick={handleClickOpen} sx={{backgroundColor: '#8b1f07', fontFamily: 'Monteserrat', fontSize: "1em"}}>
@@ -107,7 +122,15 @@ const [search,setSearch]=React.useState("")
             >
               <CloseIcon />
             </IconButton>
-            <Box sx={{ pl: "1rem" }} component="form" onSubmit={HandleSearch}>
+            <Box sx={{ pl: "1rem" }} component="form" onSubmit={(e)=>{
+                          e.preventDefault()
+                          console.log(search)
+                          getSearch({
+                          variables:{location_name:search.searchInput}
+                          })
+                        }}
+                        
+ >
               <TextField
                 variant="outlined"
                 endAdornment
@@ -120,7 +143,8 @@ const [search,setSearch]=React.useState("")
                 type="searchInput"
                 id="searchInput"
                 autoComplete="search"
-                //onClick={HandleSearch}
+                onChange={handleChange}
+
                 InputProps={{
                   endAdornment: (
                     <InputAdornment position="end">
@@ -128,7 +152,7 @@ const [search,setSearch]=React.useState("")
                         aria-label="fingerprint"
                         color="secondary"
                         type="submit"
-                        
+                       
                       >
                         <Fingerprint />
                       </IconButton>
