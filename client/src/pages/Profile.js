@@ -12,10 +12,13 @@ import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
+import { spacing } from '@mui/system';
 import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 // import Image from '../assets/beer.jpg'; 
 //import Image from '../assets/marg.jpg'
+import Logo from '../assets/ML_LOGO.png';
+
 
 
 // const cards = [1, 2, 3];
@@ -35,6 +38,8 @@ const cards = [
         drink_names: ["Wonder Water", "Austin Jackass", "Livin’ My Best Life"],
     },
 ];
+
+
 
 const style = {
     position: 'absolute',
@@ -78,40 +83,17 @@ export default function Profile() {
         <ThemeProvider theme={theme}>
             <CssBaseline />
             <main>
-                {/* Hero unit */}
-                <Box
-                    sx={{
-                        // backgroundImage: `url(${Image})`, 
-                        bgcolor: 'background.paper',
-                        pt: 8,
-                        pb: 6,
-                    }}
-                >
-                    <Container maxWidth="sm">
-
-                        <Typography
-                            component="h1"
-                            variant="h2"
-                            align="center"
-                            color="text.primary"
-                            gutterBottom
-                        >
-                            FiveStar Drinks
-                        </Typography>
-                        <Typography variant="h5" align="center" color="text.secondary" paragraph>
-                            Profile
-                        </Typography>
-                        <Stack
-                            sx={{ pt: 4 }}
-                            direction="row"
-                            spacing={2}
-                            justifyContent="center"
-                        >
-                            <Button variant="contained">Search Drinks</Button>
-                            <Button variant="contained">Browse Favorites</Button>
-                        </Stack>
+                
+              
+                  <Container sx={{
+            backgroundImage: `url(${Logo})`, 
+            width: "100vw",
+            pt: 10,
+            pb: 20
+          }}
+          >
                     </Container>
-                </Box>
+                
                 <Container sx={{ backgroundImage: `url(${Image})`, py: 8 }} maxWidth="lg">
                     {/* End hero unit */}
                     <Grid container spacing={4}>
@@ -152,8 +134,8 @@ export default function Profile() {
                             </Modal>
                         </div>
                     </Grid>
-                </Container>
+                </Container> 
             </main>
-        </ThemeProvider>
+         </ThemeProvider>
     );
 }
