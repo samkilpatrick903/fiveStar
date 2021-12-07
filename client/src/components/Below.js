@@ -8,22 +8,24 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+import Image from '../assets/dranks.jpg'; 
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    padding: theme.spacing(5, 0),
     flexGrow: 1,
     display: "flex",
     alignItems: "center"
   },
   card: {
-    backgroundColor: "#D9310B",
+    backgroundColor: "black",
+    color: "white",
     flexGrow: 1,
-    borderRadius: 10,
   },
   button: {
     backgroundColor: "#8b1f07",
     borderRadius: 1,
+    color: 'white'
   },
 }));
 
@@ -50,7 +52,7 @@ export const Below = () => {
       }
   ];
   return (
-    <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }} className={classes.root}>
+    <Grid sx={{ backgroundColor: "black", minWidth: "100%" }} container spacing={{ xs: 1, md: 1 }} columns={{ xs: 6, sm: 10, md: 12 }} className={classes.root}>
       {state.map((data) => (
         <Grid key={data.location_name} item>
           <Card className={classes.card}>
@@ -59,16 +61,20 @@ export const Below = () => {
                 <Typography gutterBottom variant="h5" component="h2">
                   {data.location_name}
                 </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
+                <Typography className={classes.card} variant="body2" color="textSecondary" component="p">
                   {data.address}
-                  {data.upvotes}
+                </Typography>
+                <Typography className={classes.card} variant="body1" color="textSecondary" component="p">
+                  <br/>
+                  Top drinks: 
+                  <br/>
                   {data.drink_names}
                 </Typography>
               </CardContent>
             </CardActionArea>
             <CardActions>
               <Button className={classes.button} size="small" color="black">
-                Check out drinks at {data.location_name}!
+                Check out {data.location_name}!
               </Button>
             </CardActions>
           </Card>

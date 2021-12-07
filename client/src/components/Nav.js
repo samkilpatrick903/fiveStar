@@ -9,15 +9,25 @@ import LocalBarTwoToneIcon from '@mui/icons-material/LocalBarTwoTone';
 import PersonAddAltTwoToneIcon from '@mui/icons-material/PersonAddAltTwoTone';
 import LiquorTwoToneIcon from '@mui/icons-material/LiquorTwoTone';
 import HomeTwoToneIcon from '@mui/icons-material/HomeTwoTone';
+import { makeStyles } from "@material-ui/core/styles";
+import Typography from '@mui/material/Typography';
+
+
+const useStyles = makeStyles((theme) => ({
+  badge: {
+    color: 'black'
+  }
+}));
 
 export default function Nav () {
+  const classes = useStyles();
   return (
     <Box sx={{ flexGrow: 1}}>
-      <AppBar sx={{backgroundColor: '#D9310B'}} position="static" >
+      <AppBar sx={{color: 'white', backgroundColor: '#D9310B'}} position="static" >
         <Toolbar sx={{boxShadow: 10, mb: .2}}>
           <IconButton size="large" color="inherit">
             <Link to="/"> 
-              <Badge> 
+              <Badge classes={{ badge: classes.badge }}> 
                 <HomeTwoToneIcon style={{fill: "black"}}/>
               </Badge> 
             </Link>
@@ -26,26 +36,29 @@ export default function Nav () {
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { md: 'flex'}}}>
            
-            <IconButton size="large" color="inherit">
+            <IconButton size="large">
             <Link to="/login"> 
-              <Badge sx={{backgroundColor: '#D9310B', fontFamily: 'Monteserrat', fontSize: ".6em"}}> 
-                <LocalBarTwoToneIcon style={{fill: "black"}} /> login
-              </Badge> 
+              <Badge sx={{fontFamily: 'Monteserrat', fontSize: ".6em"}}>
+                <LocalBarTwoToneIcon  sx={{mr:.5}} style={{fill: "black"}} /> 
+                login
+                </Badge> 
               </Link>
             </IconButton>
 
             <IconButton size="large" color="inherit">
-            <Link to="/signup"> 
-              <Badge sx={{backgroundColor: '#D9310B', fontFamily: 'Monteserrat', fontSize: ".6em"}}>
-                <PersonAddAltTwoToneIcon style={{fill: "black"}}/> signup
+            <Link to="/signup" underline="none">
+              <Badge sx={{fontFamily: 'Monteserrat', fontSize: ".6em", underline: 'none'}}>
+                <PersonAddAltTwoToneIcon sx={{mr:.5}} style={{fill: "black"}}/>
+                signup
               </Badge>
               </Link>
             </IconButton>
       
             <IconButton size="large" color="inherit">
             <Link to="/profile"> 
-              <Badge color="error" sx={{backgroundColor: '#D9310B', fontFamily: 'Monteserrat', fontSize: ".6em"}}>
-                <LiquorTwoToneIcon style={{fill: "black"}}/> profile
+              <Badge color="error" sx={{fontFamily: 'Monteserrat', fontSize: ".6em"}}>
+                <LiquorTwoToneIcon sx={{mr:.5}} style={{fill: "black"}}/> 
+                profile
               </Badge>
               </Link>
             </IconButton>
