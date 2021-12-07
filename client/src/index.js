@@ -11,7 +11,11 @@ const theme = createTheme({
     fontFamily: [
     'Montserrat', 'sans-serif',
       ].join(','),
-  }
+  },
+  palette: {
+    mode: 'dark',
+    
+  },
 });
 
 ReactDOM.render(
