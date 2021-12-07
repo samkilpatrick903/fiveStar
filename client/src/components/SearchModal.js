@@ -98,7 +98,7 @@ export default function SearchModal() {
     if(loading) return "loading..."
     console.log(search)
 const response=data
-console.log(data.venue)
+console.log(data)
     //const result=data
     console.log(getSearch)
   return (
