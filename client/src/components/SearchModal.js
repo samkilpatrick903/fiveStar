@@ -22,20 +22,20 @@ import { GET_SEARCH } from "../utils/queries"
 IMPORT QUERY TO FIND DRINKS BASED ON SEARCH
 
 */
-const state = [
-  {
-      location_name: "Lala's Little Nugget",
-      address: "2207 Justin Ln, Austin, TX 78757",
-      up_votes: "5",
-      drink_names: ["Naughty Nugget", "Buddy's Elf Fashioned", "Lump of Cole"],
-  },
-  {
-      location_name: "Wonder Bar",
-      address: "11500 Rock Rose Ave Suite D, Austin, TX 78758",
-      up_votes: "5",
-      drink_names: ["Wonder Water", "Austin Jackass", "Livin’ My Best Life"],
-  },
-];
+// const state = [
+//   {
+//       location_name: "Lala's Little Nugget",
+//       address: "2207 Justin Ln, Austin, TX 78757",
+//       up_votes: "5",
+//       drink_names: ["Naughty Nugget", "Buddy's Elf Fashioned", "Lump of Cole"],
+//   },
+//   {
+//       location_name: "Wonder Bar",
+//       address: "11500 Rock Rose Ave Suite D, Austin, TX 78758",
+//       up_votes: "5",
+//       drink_names: ["Wonder Water", "Austin Jackass", "Livin’ My Best Life"],
+//   },
+// ];
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;

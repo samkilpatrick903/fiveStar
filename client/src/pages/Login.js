@@ -71,7 +71,7 @@ const theme = createTheme();
 
 export default function Login(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
-  const [login, { error, data }] = useMutation(LOGIN_USER);
+  const [login, {error,loading}] = useMutation(LOGIN_USER);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -82,12 +82,14 @@ export default function Login(props) {
   }
   const handleLogin = async (event) => {
     event.preventDefault();
+    event.stopPropagation();
+
     console.log(formState);
     try {
       const { data } = await login({
-        variables: { ...formState },
+        variables: { formState },
       });
-
+      if(loading) return "loading"
       Auth.login(data.login.token);
     } catch (e) {
       console.error(e);

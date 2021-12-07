@@ -20,11 +20,36 @@ const resolvers = {
       throw new AuthenticationError("You need to be logged in!");
     },
     venues: async () => {
-      return await Venue.find({}).populate("drink");
+      return await Venue.find({})
     },
     venue: async (parent, { venueid }) => {
       return await Venue.findOne({ _id: venueid });
     },
+  },
+  Mutation: {
+    addUser: async (parent, args) => {
+      const user = await User.create(args);
+      const token = signToken(user);
+      return { token, user };
+    },
+    login: async (parent, { email, password }) => {
+      const user = await User.findOne({ email });
+
+      if (!user) {
+        throw new AuthenticationError('No user found');
+      }
+
+      const correctPw = await user.isCorrectPassword(password);
+
+      if (!correctPw) {
+        throw new AuthenticationError('Incorrect credentials');
+      }
+
+      const token = signToken(user);
+
+      return { token, user };
+    },
+  
   },
 }
 

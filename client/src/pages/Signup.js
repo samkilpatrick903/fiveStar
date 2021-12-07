@@ -88,7 +88,7 @@ export default function SignUp(){
     email: '',
     password: '',
   });
-  const [addUser, { error, data }] = useMutation(ADD_USER);
+  const [addUser, { error, loading }] = useMutation(ADD_USER);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -100,13 +100,19 @@ export default function SignUp(){
   };
     const loginSubmit=async(e)=>{
         e.preventDefault();
+        e.stopPropagation();
+
         console.log(formState);
 
         try {
           const { data } = await addUser({
             variables: { ...formState },
           });
-    
+          if(error){
+            console.log(error)
+          }
+          if(loading) return "loading"
+
           Auth.login(data.addUser.token);
         } catch (e) {
           console.error(e);
@@ -160,7 +166,7 @@ return(
                 required
                 fullWidth
                 id="name"
-                label="Username"
+                label="name"
                 name="name"
                 autoComplete="name"
                 autoFocus
@@ -172,7 +178,7 @@ return(
                 required
                 fullWidth
                 id="email"
-                label="Email Address"
+                label="email"
                 name="email"
                 autoComplete="email"
                 autoFocus
