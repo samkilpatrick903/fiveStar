@@ -69,7 +69,7 @@ const LoginForm = styled("form")({
 
 const theme = createTheme();
 
-export default function Login(props) {
+export default function Login() {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, {error,loading}] = useMutation(LOGIN_USER);
 
@@ -82,12 +82,11 @@ export default function Login(props) {
   }
   const handleLogin = async (event) => {
     event.preventDefault();
-    event.stopPropagation();
 
     console.log(formState);
     try {
       const { data } = await login({
-        variables: { formState },
+        variables: { ...formState },
       });
       if(loading) return "loading"
       Auth.login(data.login.token);
