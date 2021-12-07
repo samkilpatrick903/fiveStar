@@ -1,6 +1,6 @@
 const User = require('./User');
 const Venue = require('./Venue');
-const Drinks = require('./Drinks');
+const Drink = require('./Drinks');
 const Recommend = require('./Recommend');
 
-module.exports = { User, Venue };
+module.exports = { User, Venue ,Drink,Recommend};
