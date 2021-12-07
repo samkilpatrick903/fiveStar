@@ -79,9 +79,6 @@ export default function Profile() {
             <CssBaseline />
             <main>
                 {/* Hero unit */}
-
-
-
                 <Box
                     sx={{
                         // backgroundImage: `url(${Image})`, 
