@@ -29,18 +29,21 @@ const cards = [
         address: "2207 Justin Ln, Austin, TX 78757",
         up_votes: "5",
         drink_names: ["Naughty Nugget", "Buddy's Elf Fashioned", "Lump of Cole"],
+        username: "Nathan"
     },
     {
         location_name: "Wonder Bar",
         address: "11500 Rock Rose Ave Suite D, Austin, TX 78758",
         up_votes: "5",
         drink_names: ["Wonder Water", "Austin Jackass", "Livin’ My Best Life"],
+        username: "Todd"
     },
     {
         location_name: "Wonder Bar",
         address: "11500 Rock Rose Ave Suite D, Austin, TX 78758",
         up_votes: "5",
         drink_names: ["Wonder Water", "Austin Jackass", "Livin’ My Best Life"],
+        username: "Mary Lou"
     },
 ];
 
@@ -96,20 +99,29 @@ export default function Profile() {
                     >
                         <CardMedia component="img" src={Logo} title="logo" />
                     </Card>
-                    <Typography
+                    {cards.map((card) => (
+                    <Typography sx={{display: "flex", justifyContent: "center" }}
                         variant="h3"
                         align="center"
                         color="text.secondary"
                         paragraph
                     >
-                        Welcome, Username
-                    </Typography>
+                        
+                        Welcome, {card.username}
 
-                    <Avatar
+                      
+                        
+                    </Typography>
+                    ))
+}
+                        <Box sx={{display: "flex", justifyContent: "center" }}>
+                        <Avatar
                         alt="ML"
                         src= {marg}
-                        sx={{ width: 60, height: 60, bgcolor: '#D9310B'  }}
+                        sx={{ width: 130, height: 130, display: "flex", justifyContent: "center" }}
                     />
+                        </Box>
+                    
                 </Container>
 
                 <Container sx={{ py: 8, justifyContent: "center"}} maxWidth="lg">
