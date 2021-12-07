@@ -11,8 +11,6 @@ import {Below} from '../components/Below'
 import logo from '../assets/fivestar_logo2-01.png'
 import Card from '@mui/material/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 
 export default function Home() {
@@ -20,7 +18,7 @@ export default function Home() {
     <Grid>
       <Container sx={{
             backgroundImage: `url(${Image})`, 
-            width: "100vw",
+            minWidth: "100%",
             pt: 5,
             pb: 10
           }}
@@ -36,10 +34,6 @@ export default function Home() {
             />
           </CardActionArea>
         </Card>
-
-            {/* <Typography variant="h5" align="center" paragraph color='#fbbcad'>
-              Explore the best drinks in Austin! 
-            </Typography> */}
             <Stack
               sx={{ pt: 4 }}
               direction="row"

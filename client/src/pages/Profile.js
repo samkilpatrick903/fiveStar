@@ -17,9 +17,6 @@ import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 // import Image from '../assets/beer.jpg'; 
 //import Image from '../assets/marg.jpg'
-import Logo from '../assets/ML_LOGO.png';
-
-
 
 // const cards = [1, 2, 3];
 const theme = createTheme();
@@ -86,7 +83,7 @@ export default function Profile() {
                 
               
                   <Container sx={{
-            backgroundImage: `url(${Logo})`, 
+            
             width: "100vw",
             pt: 10,
             pb: 20
