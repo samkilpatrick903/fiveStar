@@ -18,8 +18,7 @@ export const GET_SEARCH = gql`
    location_name
    address
    up_votes
-   drink_names
-   user_drinks
+   
     }
   }
 

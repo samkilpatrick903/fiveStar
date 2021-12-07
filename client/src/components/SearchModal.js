@@ -71,20 +71,25 @@ const [search,setSearch]=React.useState("")
    * QUERY MADE HERE THEN MAPPED OVER AND STORED IN STATE OR OBJECT
    *
    */
-  const HandleSearch=(e)=>{
-  //   e.preventDefault();
-  //   //setSearch(true)
-  //   const loginBody = new FormData(e.currentTarget);
-  //   const x = loginBody.get("searchInput");
-  //   if(loading) return "loading..."
-  //   setSearch(x)
-  //   console.log(data)
-  //   if (!searchInput) {
-  //     return false;
-  //   }
-  //   const response =useQuery()
-   }
+  const HandleSearch=async(e)=>{
+    e.preventDefault();
+    //setSearch(true)
   
+      const loginBody = new FormData(e.currentTarget);
+      const x = loginBody.get("searchInput");
+      setSearch(x)
+      // console.log(data)
+      if (!search) {
+        return false;
+      }
+
+    }
+    const {loading,data} = useQuery(GET_SEARCH,{
+      variables:search
+    })
+    //const result=data
+    if(loading) return "loading..."
+    console.log(data)
 
   return (
     <div>
