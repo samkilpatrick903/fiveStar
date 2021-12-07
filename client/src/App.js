@@ -3,7 +3,7 @@ import Login from "./pages/Login";
 import SignUp from "./pages/Signup";
 import Nav from './components/Nav';
 import Profile from "./pages/Profile";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import React from "react";
 import {
   ApolloClient,
@@ -38,7 +38,7 @@ const client = new ApolloClient({
 function App() {
   return (
       <ApolloProvider client={client}>
-        <BrowserRouter>
+        <Router>
               <Nav />
             <Switch>
               <Route exact path="/">
@@ -54,7 +54,7 @@ function App() {
                 <Profile />
               </Route>
             </Switch>
-          </BrowserRouter>
+          </Router>
       </ApolloProvider>
   );
 }

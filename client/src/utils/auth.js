@@ -37,5 +37,4 @@ class AuthService {
     window.location.reload();
   }
 }
-
 export default new AuthService();

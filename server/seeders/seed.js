@@ -14,10 +14,10 @@ db.once('open', async () => {
     await User.create(userSeeds);
     await Drink.deleteMany({});
   
-    await Drink.create(drinkSeeds);
+    // await Drink.create(drinkSeeds);
     await Recommend.deleteMany({});
   
-    await Recommend.create(recSeeds);
+    // await Recommend.create(recSeeds);
 
     await Venue.deleteMany({});
   
