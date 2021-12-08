@@ -26,11 +26,11 @@ const resolvers = {
     venue: async (parent, { location_name }) => {
       return await Venue.findOne({ location_name: location_name }).populate(
         "user_drinks"
-      );
+      )
     },
     drink: async (parent, { drinkName }) => {
       console.log(drinkName)
-      return await Drink.find({ drinkName: drinkName })
+      return await Drink.find({ drinkName: drinkName }).populate("venue.location_name")
     },
     drinks: async (parent, { drinkName }) => {
       return await Drink.find()
