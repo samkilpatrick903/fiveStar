@@ -9,25 +9,15 @@ import LocalBarTwoToneIcon from '@mui/icons-material/LocalBarTwoTone';
 import PersonAddAltTwoToneIcon from '@mui/icons-material/PersonAddAltTwoTone';
 import LiquorTwoToneIcon from '@mui/icons-material/LiquorTwoTone';
 import HomeTwoToneIcon from '@mui/icons-material/HomeTwoTone';
-import { makeStyles } from "@material-ui/core/styles";
-import Typography from '@mui/material/Typography';
 
-
-const useStyles = makeStyles((theme) => ({
-  badge: {
-    color: 'black'
-  }
-}));
 
 export default function Nav () {
-  const classes = useStyles();
   return (
-    <Box sx={{ flexGrow: 1}}>
       <AppBar sx={{color: 'white', backgroundColor: '#D9310B'}} position="static" >
-        <Toolbar sx={{boxShadow: 10, mb: .2}}>
-          <IconButton size="large" color="inherit">
+        <Toolbar>
+          <IconButton size="large">
             <Link to="/"> 
-              <Badge classes={{ badge: classes.badge }}> 
+              <Badge> 
                 <HomeTwoToneIcon style={{fill: "white"}}/>
               </Badge> 
             </Link>
@@ -62,11 +52,9 @@ export default function Nav () {
               </Badge>
               </Link>
             </IconButton>
-        
-          </Box>
-
+      
+    </Box>
         </Toolbar>
       </AppBar>
-    </Box>
   );
 }

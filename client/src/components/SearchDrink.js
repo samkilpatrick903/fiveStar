@@ -66,16 +66,13 @@ export default function SearchDrink(props) {
 
   return (
     <div>
-      <Button
-        variant="contained"
-        onClick={handleClickOpen}
-        sx={{
-          backgroundColor: "#D9310B",
-          fontFamily: "Monteserrat",
-          fontSize: "1em",
-        }}
-      >
-        Search Drinks
+
+      <Button variant="contained" onClick={handleClickOpen} 
+      sx={{backgroundColor: '#D9310B',
+      font: 'Monteserrat',
+      fontSize: "1.5em"}}>
+        Drinks
+
       </Button>
       <Dialog
       
@@ -85,9 +82,12 @@ export default function SearchDrink(props) {
         TransitionComponent={Transition}
       >
         <AppBar sx={{
-          backgroundColor:'#D9310B',
-          color:'rgba(0, 0, 0, 0.87)',
-          position: "relative" }}>
+            position: "relative",
+            backgroundColor: "#D9310B",
+            fontFamily: "Monteserrat",
+            fontSize: "1em",
+            elevation: 2
+          }}>
           <Toolbar>
             <IconButton
               edge="start"
@@ -115,7 +115,7 @@ export default function SearchDrink(props) {
                 required
                 fullWidth
                 name="searchInput"
-                label="Search"
+                label="Search Drinks"
                 type="searchInput"
                 id="searchInput"
                 autoComplete="search"
@@ -135,9 +135,11 @@ export default function SearchDrink(props) {
                 }}
               />
             </Box>
-            <Button autoFocus color="inherit" onClick={handleClose}>
-              Close
+
+            <Button variant='contained' color="error" size='large' onClick={handleClose} sx={{ ml: 6, mt: 1 }}>
+              Add A Drink
             </Button>
+
           </Toolbar>
         </AppBar>
         <Box
