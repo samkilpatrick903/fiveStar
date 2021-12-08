@@ -47,7 +47,7 @@ export default function RecipeReviewCard() {
         component="img"
         height="194"
         image="/static/images/cards/paella.jpg"
-        alt="Paella dish"
+        alt="image"
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary" align="center">

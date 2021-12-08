@@ -5,7 +5,7 @@ import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import Image from '../assets/dranks.jpg'; 
+import Image from '../assets/blackSquare copy.jpg'; 
 import SearchModal from '../components/SearchModal';
 import {Below} from '../components/Below'
 import logo from '../assets/fivestar_logo2-01.png'
