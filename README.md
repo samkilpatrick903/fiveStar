@@ -1,75 +1,59 @@
-# FiveStar Application | ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+# FiveStar Drinks
+* URL:
+* Version 1.0
+* Deployment Date: 12/8/2021
 
 ## Table of Contents:
-  1. [Description](#description) 
-  2. [Installation](#installation)
-  3. [Usage](#usage)
+  1. [About the App](#about-the-app)
+  2. [User Story](#user-story)
+  3. [Technologies](#installation)
   4. [License](#license) 
-  5. [Contributers](#contributers) 
-  6. [GitHub and E-mail](#gitHub)
-  7. [Video and Screenshots](#video)
-  8. [Other](#other)
-
+  5. [Contributers](#contributers)
+  6. [Future Development](#future-development)
 <br>
 
-## Description
-```
-Five Star is an intuitive interface that allows users to discover new drinks from various bars and restaurants in Austin, Texas, that other users have found to be amazing. Similarly, users can also add their own drinks that they’ve found to be their favorite.
-```
-
-
+## About the App
+Use FiveStar Drinks to discover new drinks from various bars and restaurants in Austin, Texas! 
+<br>
+<br>
+![Landing Page](./client/src/assets/rm1.png) 
+<br>
+<br>
+Our intuitive interface allows you to search and browse the highest-rated venues and drinks in Austin. 
+<br>
+<br>
+Create a free account with us today to can add and save your own favorites! 
+<br>
+<br>
+![Sign-in Page](./client/src/assets/rm2.png)
+<br>
 <br>
 
-## Installation
 
-MongoDB
-
-Express.js
-
-React.js
-
-Node.js 
-
-<br>
-
-## Usage
-
+## User Story
 ```
 AS A person who likes a good drink in Austin, TX
-I WANT to add or view favorite drinks at bars and restaurants around Austin, TX
+I WANT to add or view favorite drinks at bars and restaurants
 SO THAT I can share my favorites or decide where to go find a new favorite
 ```
-
-
-
 <br>
+
+## Technologies
+* MongoDB and the Mongoose ODM
+* GraphQL with a Node.js and Express.js server
+* React.js
+* Node.js 
+* MUI Component Library
+* Heroku 
+* JWT Authentication
+<br>
+
 
 ## License
-
-MIT
-
+![MIT License](https://img.shields.io/apm/l/PACK?style=plastic)
 <br> 
 
-## Contributers 
-
-Mary Lou Hoover
-
-Todd Taylor
-
-Sam Kilpatrick
-
-Nathan Delman
-
-Brooke Jones
-
-
-<br>
-
-## GitHub | E-mail
-
-### __Lets Connect!__
-<br>
-
+## Contributers
 Mary Lou Hoover: [mlh19](https://www.github.com/mlh19) | [ml.hoover@yahoo.com](mailto:ml.hoover@yahoo.com)
 
 Todd Taylor: [DerTodd](https://github.com/DerTodd) | [todd.taylor@utexas.edu](mailto:todd.taylor@utexas.edu)
@@ -80,13 +64,4 @@ Nathan Delman: [Delmanat3](https://github.com/Delmanat3) | [delman.nathan832@gma
 
 Brooke Jones: [jones406](https://github.com/jones406) | [Brookejones406@gmail.com](Brookejones406@gmail.com )
 
-<br>
-
-## Video | Screenshots
-
-[Link to Video]()
-
-<br>
-
-## Other
-[GitHub Pages Link]()
+## Future Development 
