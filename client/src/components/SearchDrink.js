@@ -15,36 +15,17 @@ import Fingerprint from "@mui/icons-material/Fingerprint";
 import { Box } from "@mui/system";
 import { TextField } from "@mui/material";
 import { InputAdornment } from "@mui/material";
-import { useLazyQuery } from '@apollo/client';
-// import { GET_SEARCH } from "../utils/queries";
+import { useLazyQuery } from "@apollo/client";
+import { Link } from "react-router-dom";
 import { GET_DRINK } from "../utils/queries";
-/*
-
-IMPORT QUERY TO FIND DRINKS BASED ON SEARCH
-
-*/
-// const state = [
-//   {
-//       location_name: "Lala's Little Nugget",
-//       address: "2207 Justin Ln, Austin, TX 78757",
-//       up_votes: "5",
-//       drink_names: ["Naughty Nugget", "Buddy's Elf Fashioned", "Lump of Cole"],
-//   },
-//   {
-//       location_name: "Wonder Bar",
-//       address: "11500 Rock Rose Ave Suite D, Austin, TX 78758",
-//       up_votes: "5",
-//       drink_names: ["Wonder Water", "Austin Jackass", "Livin’ My Best Life"],
-//   },
-// ];
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-export default function SearchDrink() {
+export default function SearchDrink(props) {
   const [open, setOpen] = React.useState(false);
-  const [search,setSearch]=React.useState("")
+  const [search, setSearch] = React.useState("");
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -53,86 +34,45 @@ export default function SearchDrink() {
     setOpen(false);
   };
 
-
-  const state = [
-    {
-        location_name: "Lala's Little Nugget",
-        address: "2207 Justin Ln, Austin, TX 78757",
-        up_votes: "5",
-        drink_names: ["Naughty Nugget", "Buddy's Elf Fashioned", "Lump of Cole"],
-    },
-    {
-        location_name: "Wonder Bar",
-        address: "11500 Rock Rose Ave Suite D, Austin, TX 78758",
-        up_votes: "5",
-        drink_names: ["Wonder Water", "Austin Jackass", "Livin’ My Best Life"],
-    },
-];
-  /*
-   * QUERY MADE HERE THEN MAPPED OVER AND STORED IN STATE OR OBJECT
-   *
-   */
-
   const handleChange = (event) => {
-
     const { name, value } = event.target;
     setSearch({
       ...search,
       [name]: value,
     });
+  };
+
+  const [getSearch, { error, loading, data }] = useLazyQuery(GET_DRINK, {
+    variables: search,
+    fetchPolicy: "network-only", // Used for first execution
+    nextFetchPolicy: "cache-first", // Used for subsequent executions
+  });
+  if (error) {
+    console.log(error);
   }
-  const HandleSearch=async(e)=>{
-    e.preventDefault();
-    //setSearch(true)
-  
-      // const loginBody = new FormData(e.currentTarget);
-      // const x = loginBody.get("searchInput");
-      // setSearch(x)
-      // console.log(search)  
- 
-     
-    }
-    const [getSearch,{error,loading,data}]= useLazyQuery(GET_DRINK,{
-      variables:search
-    })
-    if(error){
-        console.log(error)
-    }
-    if(loading) return "loading..."
-    const {drink}=data || {}
-       const arr1=[]
-arr1.push(drink)
-    console.log(arr1)
-    console.log(search)
-    // const {venue}=data || {}
-    
-    //   const fuck=venue
-    //  arr1.push(fuck)
-  //    console.log(arr1)
+  if (loading) return "loading...";
+  const { drink } = data || {};
+  const arr1 = [];
+  arr1.push(drink);
 
+  console.log(arr1);
+  console.log(search);
 
- const resData=arr1.map((yes)=>({
-  name:yes?.drinkName || '',
-  date:yes?.date || '',
-  venue:yes?.venue || '',
-}))
-// for(const lip in venue){
+  const resData = arr1.map((yes) => ({
+    name: yes?.drinkName || "",
+    date: yes?.date || "",
+    venue: yes?.venue || "",
+  }));
 
-// }
-// const resData={
-//   name:fuck.location_name,
-// }
- console.log(resData)
-// console.log(arr1)
-//     }
-   
   return (
     <div>
+
       <Button variant="contained" onClick={handleClickOpen} 
       sx={{backgroundColor: '#D9310B',
       font: 'Monteserrat',
       fontSize: "1.5em"}}>
         Drinks
+
       </Button>
       <Dialog
         fullScreen
@@ -156,14 +96,16 @@ arr1.push(drink)
             >
               <CloseIcon />
             </IconButton>
-            <Box sx={{ pl: "1rem" }} component="form" onSubmit={(e)=>{
-                          e.preventDefault()
-                          getSearch({
-                          variables:{drinkName:search.searchInput}
-                          })
-                        }}
-                        
- >
+            <Box
+              sx={{ pl: "1rem" }}
+              component="form"
+              onSubmit={(e) => {
+                e.preventDefault();
+                getSearch({
+                  variables: { drinkName: search.searchInput },
+                });
+              }}
+            >
               <TextField
                 variant="outlined"
                 endAdornment
@@ -177,7 +119,6 @@ arr1.push(drink)
                 id="searchInput"
                 autoComplete="search"
                 onChange={handleChange}
-
                 InputProps={{
                   endAdornment: (
                     <InputAdornment position="end">
@@ -185,7 +126,6 @@ arr1.push(drink)
                         aria-label="fingerprint"
                         color="secondary"
                         type="submit"
-                       
                       >
                         <Fingerprint />
                       </IconButton>
@@ -202,19 +142,20 @@ arr1.push(drink)
           </Toolbar>
         </AppBar>
         <List>
-          {/* MAP OVER QUERY AND CREATE A LIST ITEM FOR EACH RESULT 
-           ||{}
-          */}
           {resData.map((loc) => (
             <div key={loc.name}>
-              <ListItem button>
-                {/* EACH WILL BE COINTAINED IN BUTTON THAT LINKS TOO SINGLE RESULT PAGE?? */}
-                <ListItemText
-                  primary={loc.name}
-                  secondary={loc.venue}
-                  //secondary={loc.drink_names}
-                />
-              </ListItem>
+
+              <Link
+                to={{
+                  pathname: "/results",
+                  state: loc, // your data array of objects}}
+                }}
+              >
+                <ListItem button>
+                  <ListItemText primary={loc.name} secondary={loc.venue} />
+                </ListItem>
+              </Link>
+
               <Divider />
             </div>
           ))}

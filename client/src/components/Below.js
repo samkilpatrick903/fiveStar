@@ -57,6 +57,7 @@ export const Below = () => {
   ];
 
   return (
+
     <Grid
       container
       spacing={{ xs: 1, md: 2 }}
@@ -69,6 +70,7 @@ export const Below = () => {
         boxShadow: "1px 2px 2px 2px #1C0B03",
       }}
     >
+
       {state.map((data) => (
         <Grid key={data.location_name} item xs={12} sm={6} md={4}>
           <Card className={classes.card}>

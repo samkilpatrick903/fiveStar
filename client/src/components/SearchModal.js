@@ -19,6 +19,10 @@ import { useLazyQuery } from "@apollo/client";
 import { GET_SEARCH } from "../utils/queries";
 import { GET_DRINK } from "../utils/queries";
 
+import { Link } from "react-router-dom";
+
+
+
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
@@ -48,9 +52,7 @@ export default function SearchModal() {
       drink_names: ["Wonder Water", "Austin Jackass", "Livin’ My Best Life"],
     },
   ];
-  /*
-   * QUERY MADE HERE THEN MAPPED OVER AND STORED IN STATE OR OBJECT
-   */
+
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -59,14 +61,7 @@ export default function SearchModal() {
       [name]: value,
     });
   };
-  const HandleSearch = async (e) => {
-    e.preventDefault();
-    //setSearch(true)
-    // const loginBody = new FormData(e.currentTarget);
-    // const x = loginBody.get("searchInput");
-    // setSearch(x)
-    // console.log(search)
-  };
+
   const [getSearch, { loading, data }] = useLazyQuery(GET_SEARCH, {
     variables: search,
   });
@@ -78,22 +73,16 @@ export default function SearchModal() {
 
   const fuck = venue;
   arr1.push(fuck);
-  //    console.log(arr1)
-
+ 
   const resData = arr1.map((yes) => ({
     name: yes?.location_name || "",
     address: yes?.address || "",
     drinks: yes?.drink_names || "",
   }));
-  // for(const lip in venue){
 
-  // }
-  // const resData={
-  //   name:fuck.location_name,
-  // }
   console.log(resData);
   console.log(arr1);
-  //     }
+ 
 
   return (
     <div>
@@ -178,26 +167,33 @@ export default function SearchModal() {
 
           </Toolbar>
         </AppBar>
-        
-        <List >
-          {/* MAP OVER QUERY AND CREATE A LIST ITEM FOR EACH RESULT 
-           ||{}
-          */}
+
+        <List>
+     
           {resData.map((loc) => (
             <div key={loc.address}>
-              <ListItem button>
-                {/* EACH WILL BE COINTAINED IN BUTTON THAT LINKS TOO SINGLE RESULT PAGE?? */}
-                <ListItemText sx={{ BackgroundColor: "transparent" }}
-                  primary={loc.name}
-                  secondary={loc.address}
-                  //secondary={loc.drink_names}
-                />
-              </ListItem>
+              <Link
+                to={{
+                  pathname: "/results",
+                  state: loc, 
+                }}
+              >
+                <ListItem button></ListItem>
+                <ListItem button>
+                 
+                  <ListItemText
+                    sx={{ BackgroundColor: "transparent" }}
+                    primary={loc.name}
+                    secondary={loc.address}
+                  />
+                </ListItem>
+              </Link>
+
               <Divider />
             </div>
           ))}
 
-          {/* <Divider /> */}
+         
         </List>
       </Dialog>
     </div>
