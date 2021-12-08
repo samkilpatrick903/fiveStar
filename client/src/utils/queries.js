@@ -34,6 +34,9 @@ query drink($drinkName: String!) {
     drinkName
     venue
     date
+    recommendations {
+      _id
+    }
   }
 }
 `;

@@ -4,7 +4,8 @@ import SignUp from "./pages/Signup";
 import Nav from './components/Nav';
 import Profile from "./pages/Profile";
 import Results from "./pages/Results"
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import { BrowserRouter as Router, Switch, Redirect, Route } from "react-router-dom";
 import React from "react";
 import {
   ApolloClient,
@@ -15,7 +16,8 @@ import {
 import { setContext } from "@apollo/client/link/context";
 
 const httpLink = createHttpLink({
-  uri: "http://localhost:3001/graphql",
+  uri: (window.location.hostname === '<fiveStar>') ? '/graphql' : 'http://localhost:3001/graphql' 
+
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -33,12 +35,14 @@ const authLink = setContext((_, { headers }) => {
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
+  
 });
 
 
 function App(props) {
-  const  data = props.history     
-  return (
+   
+		
+    return(
       <ApolloProvider client={client}>
         <Router>
               <Nav />
@@ -52,11 +56,13 @@ function App(props) {
               <Route exact path="/signup">
                 <SignUp />
               </Route>
-              <Route exact path="/profile">
+           
+              <Route exact path="/profile" element={Profile} >
                 <Profile />
               </Route>
               <Route exact path="/results" render={(data) =>  <Results  {...data}/>}>
-               
+            
+           
               </Route>
             </Switch>
           </Router>

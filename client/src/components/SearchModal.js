@@ -78,6 +78,7 @@ export default function SearchModal() {
     name: yes?.location_name || "",
     address: yes?.address || "",
     drinks: yes?.drink_names || "",
+
   }));
 
   console.log(resData);

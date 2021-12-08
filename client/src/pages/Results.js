@@ -30,7 +30,7 @@ const ExpandMore = styled((props) => {
 export default function Results(props) {
   const [expanded, setExpanded] = React.useState(false);
   const { state } = props.location
-
+console.log(state)
 console.log(state)
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -43,7 +43,7 @@ console.log(state)
 
       <CardHeader
         
-        title="VENUE" align="center"
+        title={state.name} align="center"
       />
       <CardMedia 
         component="img"
@@ -53,7 +53,7 @@ console.log(state)
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary" align="center">
-          LOCATION
+          {state.name}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
@@ -71,11 +71,12 @@ console.log(state)
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography align="center"paragraph>TOP DRINKS: </Typography>
+          <Typography align="center"paragraph> </Typography>
           <Typography align="center"paragraph>
-            Drink 1
-            Drink 2
-            Drink 3
+     Reviewers <br/>{state?.reviews ||state.address }
+        <br/>
+        <br/>
+          Venues <br/> {state?.venue || state.drinks}
           </Typography>
           
         </CardContent>
