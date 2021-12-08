@@ -18,7 +18,7 @@ import { InputAdornment } from "@mui/material";
 import { useLazyQuery } from "@apollo/client";
 import { GET_SEARCH } from "../utils/queries";
 import { GET_DRINK } from "../utils/queries";
-
+import {GET_VENUES} from '../utils/queries'
 import { Link } from "react-router-dom";
 
 
@@ -38,20 +38,6 @@ export default function SearchModal() {
     setOpen(false);
   };
 
-  const state = [
-    {
-      location_name: "Lala's Little Nugget",
-      address: "2207 Justin Ln, Austin, TX 78757",
-      up_votes: "5",
-      drink_names: ["Naughty Nugget", "Buddy's Elf Fashioned", "Lump of Cole"],
-    },
-    {
-      location_name: "Wonder Bar",
-      address: "11500 Rock Rose Ave Suite D, Austin, TX 78758",
-      up_votes: "5",
-      drink_names: ["Wonder Water", "Austin Jackass", "Livin’ My Best Life"],
-    },
-  ];
 
 
   const handleChange = (event) => {
@@ -78,6 +64,7 @@ export default function SearchModal() {
     name: yes?.location_name || "",
     address: yes?.address || "",
     drinks: yes?.drink_names || "",
+    //reviews: yes?.recommendations[0]._id || "",
 
   }));
 

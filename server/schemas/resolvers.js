@@ -28,7 +28,8 @@ const resolvers = {
       );
     },
     drink: async (parent, { drinkName }) => {
-      return await Drink.findOne({ drinkName: drinkName })
+      console.log(drinkName)
+      return await Drink.find({ drinkName: drinkName })
     },
   },
   Mutation: {
@@ -77,7 +78,7 @@ const resolvers = {
       await Venue.findOneAndUpdate(
 				{ venue: venue },
 				{
-					$addToSet: {
+					$push: {
 						drink_names: [
 							 drinkName
             ]

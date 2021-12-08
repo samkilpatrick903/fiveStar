@@ -28,6 +28,26 @@ export const GET_SEARCH = gql`
 
   
 `;
+
+
+export const GET_ALL_DRINK = gql`
+query drinks {
+  drinks {
+    drinkName
+    venue
+    date
+  }
+}
+`;
+export const GET_VENUES = gql`
+query venues {
+  venues {
+    location_name
+  }
+}
+`;
+
+
 export const GET_DRINK = gql`
 query drink($drinkName: String!) {
   drink(drinkName: $drinkName) {
