@@ -27,8 +27,8 @@ const venueSchema = new Schema({
   ],
   user_drinks: [
     {
-      type: Schema.Types.ObjectId,
-      ref: 'Drink'
+      type: String,
+      //ref: 'Drink'
     }
   ]
 

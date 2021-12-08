@@ -14,7 +14,7 @@ type Drink{
     _id:ID!
     venue:[String]!
     drinkName:String
-    recommendations:[Recommend]!
+    recommendations:[String]!
     date:String
 }
 type Recommend{
