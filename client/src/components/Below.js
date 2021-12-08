@@ -52,7 +52,7 @@ export const Below = () => {
       }
   ];
   return (
-    <Grid sx={{ backgroundColor: "black", minWidth: "100%" }} container spacing={{ xs: 1, md: 1 }} columns={{ xs: 6, sm: 10, md: 12 }} className={classes.root}>
+    <Grid sx={{ backgroundColor: "black", minWidth: "100%", justifyContent:'center'}} container spacing={{ xs: 1, md: 1 }} columns={{ xs: 6, sm: 10, md: 12 }} className={classes.root}>
       {state.map((data) => (
         <Grid key={data.location_name} item>
           <Card className={classes.card}>
