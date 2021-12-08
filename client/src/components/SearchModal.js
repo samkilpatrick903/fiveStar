@@ -15,8 +15,8 @@ import Fingerprint from "@mui/icons-material/Fingerprint";
 import { Box } from "@mui/system";
 import { TextField } from "@mui/material";
 import { InputAdornment } from "@mui/material";
-import { useLazyQuery } from '@apollo/client';
-import { GET_SEARCH } from "../utils/queries"
+import { useLazyQuery } from "@apollo/client";
+import { GET_SEARCH } from "../utils/queries";
 /*
 
 IMPORT QUERY TO FIND DRINKS BASED ON SEARCH
@@ -43,7 +43,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 export default function SearchModal() {
   const [open, setOpen] = React.useState(false);
-  const [search,setSearch]=React.useState("")
+  const [search, setSearch] = React.useState("");
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -52,58 +52,62 @@ export default function SearchModal() {
     setOpen(false);
   };
 
-
   const state = [
     {
-        location_name: "Lala's Little Nugget",
-        address: "2207 Justin Ln, Austin, TX 78757",
-        up_votes: "5",
-        drink_names: ["Naughty Nugget", "Buddy's Elf Fashioned", "Lump of Cole"],
+      location_name: "Lala's Little Nugget",
+      address: "2207 Justin Ln, Austin, TX 78757",
+      up_votes: "5",
+      drink_names: ["Naughty Nugget", "Buddy's Elf Fashioned", "Lump of Cole"],
     },
     {
-        location_name: "Wonder Bar",
-        address: "11500 Rock Rose Ave Suite D, Austin, TX 78758",
-        up_votes: "5",
-        drink_names: ["Wonder Water", "Austin Jackass", "Livin’ My Best Life"],
+      location_name: "Wonder Bar",
+      address: "11500 Rock Rose Ave Suite D, Austin, TX 78758",
+      up_votes: "5",
+      drink_names: ["Wonder Water", "Austin Jackass", "Livin’ My Best Life"],
     },
-];
+  ];
   /*
    * QUERY MADE HERE THEN MAPPED OVER AND STORED IN STATE OR OBJECT
    *
    */
 
   const handleChange = (event) => {
-
     const { name, value } = event.target;
     setSearch({
       ...search,
       [name]: value,
     });
-  }
-  const HandleSearch=async(e)=>{
+  };
+  const HandleSearch = async (e) => {
     e.preventDefault();
     //setSearch(true)
-  
-      // const loginBody = new FormData(e.currentTarget);
-      // const x = loginBody.get("searchInput");
-      // setSearch(x)
-      console.log(search)  
- 
-     
-    }
-    const [getSearch,{loading,data}]= useLazyQuery(GET_SEARCH,{
-      variables:search
-    })
-    //const result=data || {}
-    if(loading) return "loading..."
-    console.log(search)
-const response=data
-console.log(data)
-    //const result=data
-    console.log(getSearch)
+
+    // const loginBody = new FormData(e.currentTarget);
+    // const x = loginBody.get("searchInput");
+    // setSearch(x)
+    console.log(search);
+  };
+  const [getSearch, { loading, data }] = useLazyQuery(GET_SEARCH, {
+    variables: search,
+  });
+  //const result=data || {}
+  if (loading) return "loading...";
+  console.log(search);
+  const response = data;
+  console.log(data);
+  //const result=data
+  console.log(getSearch);
   return (
     <div>
-      <Button variant="contained" onClick={handleClickOpen} sx={{backgroundColor: '#8b1f07', fontFamily: 'Monteserrat', fontSize: "1em"}}>
+      <Button
+        variant="contained"
+        onClick={handleClickOpen}
+        sx={{
+          backgroundColor: "#8b1f07",
+          fontFamily: "Monteserrat",
+          fontSize: "1em",
+        }}
+      >
         Search Drinks
       </Button>
       <Dialog
@@ -122,15 +126,17 @@ console.log(data)
             >
               <CloseIcon />
             </IconButton>
-            <Box sx={{ pl: "1rem" }} component="form" onSubmit={(e)=>{
-                          e.preventDefault()
-                          console.log(search)
-                          getSearch({
-                          variables:{location_name:search.searchInput}
-                          })
-                        }}
-                        
- >
+            <Box
+              sx={{ pl: "1rem" }}
+              component="form"
+              onSubmit={(e) => {
+                e.preventDefault();
+                console.log(search);
+                getSearch({
+                  variables: { location_name: search.searchInput },
+                });
+              }}
+            >
               <TextField
                 variant="outlined"
                 endAdornment
@@ -144,7 +150,6 @@ console.log(data)
                 id="searchInput"
                 autoComplete="search"
                 onChange={handleChange}
-
                 InputProps={{
                   endAdornment: (
                     <InputAdornment position="end">
@@ -152,7 +157,6 @@ console.log(data)
                         aria-label="fingerprint"
                         color="secondary"
                         type="submit"
-                       
                       >
                         <Fingerprint />
                       </IconButton>

@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const QUERY_USER = gql`
   query user($email: String!) {
@@ -13,13 +13,9 @@ export const QUERY_USER = gql`
 `;
 
 export const GET_SEARCH = gql`
- query venue($location_name:String!) {
-    venue(location_name:$location_name){
-   address
-   
-   
+  query venue($location_name: String!) {
+    venue(location_name: $location_name) {
+      address
     }
   }
-
-  
 `;
