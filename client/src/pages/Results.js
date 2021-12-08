@@ -15,6 +15,7 @@ import ShareIcon from "@mui/icons-material/Share";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 
+
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
   return <IconButton {...other} />;
@@ -35,10 +36,15 @@ export default function Results(props) {
     setExpanded(!expanded);
   };
 
+  const [flag, setFlag] = React.useState(true);
+  const handleClick = () => {
+    setFlag(!flag);
+  };
+
   return (
-    <div style={{ display: "flex", justifyContent: "center", paddingTop: 70 }}>
+  <div style={{ display: "flex", justifyContent: "center", paddingTop: 70 }}>
       <Card sx={{ width: "70%" }}>
-        <CardHeader title={state.name} align="center" />
+        <CardHeader title={state.drinkName} align="center" />
         <CardMedia
           component="img"
           height="194"
@@ -47,13 +53,20 @@ export default function Results(props) {
         />
         <CardContent>
           <Typography variant="body2" color="text.secondary" align="center">
-            {state.name}
+            {state.drinkName}
           </Typography>
         </CardContent>
         <CardActions disableSpacing>
-          <IconButton aria-label="add to favorites">
+          
+          <IconButton
+          onClick={handleClick}
+      variant="contained"
+      color={flag ? "secondary" : "error"}
+            aria-label="add to favorites"
+          >
             <FavoriteIcon />
           </IconButton>
+
           <ExpandMore
             expand={expanded}
             onClick={handleExpandClick}
@@ -70,7 +83,7 @@ export default function Results(props) {
             </Typography>
             <Typography align="center" paragraph>
               Reviewers <br />
-              {state?.reviews || state.address}
+              {state?.recommendations || state.address}
               <br />
               <br />
               Venues <br /> {state?.venue || state.drinks}

@@ -13,7 +13,7 @@ type User{
 type Drink{
     _id:ID!
     venue:[String]!
-    drinkName:String!
+    drinkName:String
     recommendations:[Recommend]!
     date:String
 }
@@ -49,7 +49,7 @@ type Query{
     users:[User]!
     user(userid: ID!):User
     venue(location_name: String!):Venue
-    drink(drinkName: String!):Drink
+    drink(drinkName: String):[Drink]
 
 }
 
