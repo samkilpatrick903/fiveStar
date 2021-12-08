@@ -54,8 +54,8 @@ function App() {
               <Route exact path="/profile">
                 <Profile />
               </Route>
-              <Route exact path="/results">
-                <Results />
+              <Route exact path="/results" render={(props) =>  <Results  />}>
+               
               </Route>
             </Switch>
           </Router>
