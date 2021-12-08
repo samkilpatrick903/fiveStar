@@ -28,7 +28,7 @@ const resolvers = {
       );
     },
     drink: async (parent, { drinkName }) => {
-      return await Drink.findOne({ drinkName: drinkName }).populate('venue')
+      return await Drink.findOne({ drinkName: drinkName })
     },
   },
   Mutation: {
@@ -71,7 +71,8 @@ const resolvers = {
     addDrink:async(parent,args,context)=>{
       const {drinkName,venue}=args
       const newDrink=await Drink.create({
-        drinkName:drinkName
+        drinkName:drinkName,
+        venue:venue
       })
       await Venue.findOneAndUpdate(
 				{ venue: venue },
@@ -88,12 +89,9 @@ const resolvers = {
       return newDrink
     },
     addReview: async (parent, args, context) => {
-			//! get rid of userId when we can use the context to our advantage
 			const { userid, name,drink,venue_id,count } = args;
-			//! add user context to authenticate
 			// if (context.user._id) {
 			await Recommendation.create(
-				// would user context instead here
 				{venue_id: venue_id,
         count:count,
         drink:drink
@@ -105,9 +103,9 @@ const resolvers = {
 				{ drink: drink },
 				{
 					$addToSet: {
-						recommendations: {
-							_id: userid
-						}
+						recommendations: [
+							name
+            ]
 					}
 				
 				},{ new: true }
