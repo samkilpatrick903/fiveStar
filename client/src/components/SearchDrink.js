@@ -62,32 +62,37 @@ export default function SearchDrink(props) {
     name: yes?.drinkName || "",
     date: yes?.date || "",
     venue: yes?.venue || "",
+    reviews: yes?.recommendations[0]._id || "",
   }));
 
   return (
     <div>
-
-      <Button variant="contained" onClick={handleClickOpen} 
-      sx={{backgroundColor: '#D9310B',
-      font: 'Monteserrat',
-      fontSize: "1.5em"}}>
+      <Button
+        variant="contained"
+        onClick={handleClickOpen}
+        sx={{
+          backgroundColor: "#D9310B",
+          font: "Monteserrat",
+          fontSize: "1.5em",
+        }}
+      >
         Drinks
-
       </Button>
       <Dialog
-      
         fullScreen
         open={open}
         onClose={handleClose}
         TransitionComponent={Transition}
       >
-        <AppBar sx={{
+        <AppBar
+          sx={{
             position: "relative",
             backgroundColor: "#D9310B",
             fontFamily: "Monteserrat",
             fontSize: "1em",
-            elevation: 2
-          }}>
+            elevation: 2,
+          }}
+        >
           <Toolbar>
             <IconButton
               edge="start"
@@ -136,41 +141,38 @@ export default function SearchDrink(props) {
               />
             </Box>
 
-            <Button variant='contained' color="error" size='large' onClick={handleClose} sx={{ ml: 6, mt: 1 }}>
+            <Button
+              variant="contained"
+              color="error"
+              size="large"
+              onClick={handleClose}
+              sx={{ ml: 6, mt: 1 }}
+            >
               Add A Drink
             </Button>
-
           </Toolbar>
         </AppBar>
-        <Box
-        >
-        <List
-        >
-          {resData.map((loc) => (
-            <div 
-            style={{ textDecoration:'none'
-          }}
-            key={loc.name}>
-              <Link
-              
-                to={{
-                  pathname: "/results",
-                  state: loc, // your data array of objects}}
-                }}
-              >
-                <ListItem button
-                sx={{textDecoration:'none'}}
+        <Box>
+          <List>
+            {resData.map((loc) => (
+              <div style={{ textDecoration: "none" }} key={loc.name}>
+                <Link
+                  to={{
+                    pathname: "/results",
+                    state: loc, // your data array of objects}}
+                  }}
                 >
-                  <ListItemText primary={loc.name} secondary={loc.venue} />
-                </ListItem>
-              </Link>
+                  <ListItem button sx={{ textDecoration: "none" }}>
+                    <ListItemText primary={loc.name} secondary={loc.venue} />
+                  </ListItem>
+                </Link>
 
-              <Divider />
-            </div>
-          ))}
+                <Divider />
+              </div>
+            ))}
 
-          {/* <Divider /> */}
-        </List>
+            {/* <Divider /> */}
+          </List>
         </Box>
       </Dialog>
     </div>

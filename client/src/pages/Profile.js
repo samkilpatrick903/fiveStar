@@ -59,6 +59,7 @@ const style = {
 };
 
 function BarModal(open, handleClose) {
+  
   return (
     <div>
       <Modal
@@ -79,7 +80,8 @@ function BarModal(open, handleClose) {
     </div>
   );
 }
-export default function Profile() {
+export default function Profile(props) {
+console.log(props)
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
