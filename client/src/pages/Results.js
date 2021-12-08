@@ -15,6 +15,7 @@ import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
+
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
   return <IconButton {...other} />;
@@ -35,23 +36,23 @@ console.log(sucky)
   };
 
   return (
-    <Card sx={{ width: '60%', justifyContent: "center", }}>
+    <div style={{ display:'flex', justifyContent:'center', paddingTop: 70 }}
+    >
+    <Card sx={{ width: '70%' }}>
 
       <CardHeader
         
-        title="VENUE"
+        title="VENUE" align="center"
       />
-      <CardMedia
+      <CardMedia 
         component="img"
         height="194"
         image="/static/images/cards/paella.jpg"
-        alt="Paella dish"
+        alt="image"
       />
       <CardContent>
-        <Typography variant="body2" color="text.secondary">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the mussels,
-          if you like.
+        <Typography variant="body2" color="text.secondary" align="center">
+          LOCATION
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
@@ -69,14 +70,16 @@ console.log(sucky)
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>Method:</Typography>
-          <Typography paragraph>
-            Heat 1/2 cup of the broth in a pot until simmering, add saffron and set
-            aside for 10 minutes.
+          <Typography align="center"paragraph>TOP DRINKS: </Typography>
+          <Typography align="center"paragraph>
+            Drink 1
+            Drink 2
+            Drink 3
           </Typography>
           
         </CardContent>
       </Collapse>
     </Card>
+    </div>
   );
 }
