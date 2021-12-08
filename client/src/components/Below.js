@@ -8,29 +8,29 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import Image from '../assets/dranks.jpg'; 
-
+import Image from "../assets/dranks.jpg";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundImage: `url(${Image})`,
-    height: '100vh',
     flexGrow: 1,
     display: "flex",
-    justifyContent: 'center',
+    justifyContent: "center",
   },
   card: {
     backgroundColor: "black",
     color: "white",
-    boxShadow: "1px 2px 2px 2px #1C0B03"
+    boxShadow: "1px 2px 2px 2px #1C0B03",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "stretch",
+    font: "Monteserrat",
   },
   button: {
     backgroundColor: "#D9310B",
     borderRadius: 1,
-    color: 'white',
+    color: "white",
+    marginTop: '20px'
   },
-  cardcontent: {
-  }
 }));
 
 export const Below = () => {
@@ -40,48 +40,56 @@ export const Below = () => {
       location_name: "Lala's Little Nugget",
       address: "2207 Justin Ln, Austin, TX 78757",
       up_votes: "5",
-      drink_names: "Naughty Nugget, Buddy's Elf Fashioned, Lump of Cole"
+      drink_names: "Naughty Nugget",
     },
     {
       location_name: "Wonder Bar",
       address: "11500 Rock Rose Ave suite d, Austin, TX 78758",
       up_votes: "9",
-      drink_names: "Wonder Water, Austin Jackass, Livin’ My Best Life"
+      drink_names: "Wonder Water",
     },
     {
-        location_name: "Easy Tiger",
-        address: "6406 N I-35 Frontage Rd. Suite 1100 Austin, TX 78752",
-        up_votes: "3",
-        drink_names: "Lucky Buck, Rye of the Tiger, Cadillac Coffee"
-      }
+      location_name: "Easy Tiger",
+      address: "6406 N I-35 Frontage Rd. Suite 1100 Austin, TX 78752",
+      up_votes: "3",
+      drink_names: "Lucky Buck",
+    },
   ];
 
   return (
-    <Grid container spacing={{ xs: 1, md: 1 }} columns={{ xs: 8, sm: 6, md: 8 }} className={classes.root}>
+    <Grid
+      container
+      spacing={{ xs: 1, md: 2 }}
+      className={classes.root}
+      sx={{
+        pt: 4,
+        backgroundImage: `url(${Image})`,
+        minWidth: "100vw",
+        height: "100vh",
+        boxShadow: "1px 2px 2px 2px #1C0B03",
+      }}
+    >
       {state.map((data) => (
-        <Grid key={data.location_name} item>
+        <Grid key={data.location_name} item xs={12} sm={6} md={4}>
           <Card className={classes.card}>
-            <CardActionArea>
-              <CardContent className={classes.cardcontent}>
-                <Typography gutterBottom variant="h5" component="h2">
-                  {data.location_name}
-                </Typography>
-                <Typography variant="body2" component="p">
-                  {data.address}
-                </Typography>
-                <Typography variant="body1" component="p">
-                  <br/>
-                  Top drinks: 
-                  <br/>
-                  {data.drink_names}
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-            <CardActions>
-              <Button className={classes.button} size="small" color="black">
-                Check out {data.location_name}!
-              </Button>
-            </CardActions>
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="h2">
+                {data.location_name}
+                <hr />
+              </Typography>
+              <Typography variant="body2">{data.address}</Typography>
+              <Typography variant="body1">
+                <br />
+                Top drink:
+                <br />
+                {data.drink_names}
+              </Typography>
+              <CardActionArea className={classes.cardaction}>
+                <Button className={classes.button} size="small">
+                  Check out {data.location_name}!
+                </Button>
+              </CardActionArea>
+            </CardContent>
           </Card>
         </Grid>
       ))}

@@ -102,7 +102,7 @@ export default function SearchModal() {
         onClick={handleClickOpen}
         sx={{
           backgroundColor: "#D9310B",
-          fontFamily: "Monteserrat",
+          font: "Monteserrat",
           fontSize: "1.5em",
         }}
       >

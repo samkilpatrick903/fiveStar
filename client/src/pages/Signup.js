@@ -154,8 +154,8 @@ return(
               alignItems: 'center',
             }}
           >
-            <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-              <LocalBarTwoToneIcon />
+            <Avatar sx={{ m: 1, bgcolor: 'transparent' }}>
+              <LocalBarTwoToneIcon style={{color:"#D9310B"}}/>
             </Avatar>
             <Typography component="h1" variant="h5">
               Sign Up

@@ -21,7 +21,7 @@ export default function Home() {
             //backgroundImage: `url(${Image})`, 
             minWidth: "100%",
             pt: 5,
-            pb: 10,
+            pb: 5,
             boxShadow: "1px 2px 2px 2px #1C0B03"
           }}
         >

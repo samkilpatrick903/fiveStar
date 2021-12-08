@@ -130,7 +130,7 @@ arr1.push(drink)
     <div>
       <Button variant="contained" onClick={handleClickOpen} 
       sx={{backgroundColor: '#D9310B',
-      fontFamily: 'Monteserrat',
+      font: 'Monteserrat',
       fontSize: "1.5em"}}>
         Drinks
       </Button>
