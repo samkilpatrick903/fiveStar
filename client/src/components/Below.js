@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   button: {
-    backgroundColor: "#8b1f07",
+    backgroundColor: "#D9310B",
     borderRadius: 1,
     color: 'white'
   },
