@@ -17,6 +17,7 @@ import { TextField } from "@mui/material";
 import { InputAdornment } from "@mui/material";
 import { useLazyQuery } from '@apollo/client';
 // import { GET_SEARCH } from "../utils/queries";
+import {Redirect} from 'react-router-dom'
 import { GET_DRINK } from "../utils/queries";
 /*
 
@@ -53,7 +54,9 @@ export default function SearchDrink() {
     setOpen(false);
   };
 
+const handleSearch=()=>{
 
+}
   const state = [
     {
         location_name: "Lala's Little Nugget",
@@ -176,7 +179,6 @@ arr1.push(drink)
                         aria-label="fingerprint"
                         color="secondary"
                         type="submit"
-                       
                       >
                         <Fingerprint />
                       </IconButton>
@@ -196,7 +198,17 @@ arr1.push(drink)
           */}
           {resData.map((loc) => (
             <div key={loc.name}>
-              <ListItem button>
+              <ListItem button
+              onClick={(e)=>{
+                  e.preventDefault();
+                  
+                <Redirect to={{
+                    pathname: `/results`,
+                    //state: { name: loc.name }
+                }}
+        />
+              }}
+              >
                 {/* EACH WILL BE COINTAINED IN BUTTON THAT LINKS TOO SINGLE RESULT PAGE?? */}
                 <ListItemText
                   primary={loc.name}

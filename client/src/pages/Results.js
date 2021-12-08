@@ -26,9 +26,10 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function RecipeReviewCard() {
+export default function RecipeReviewCard(props) {
   const [expanded, setExpanded] = React.useState(false);
-
+const sucky=props
+console.log(sucky)
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
@@ -38,7 +39,6 @@ export default function RecipeReviewCard() {
 
       <CardHeader
         
-<<<<<<< HEAD
         title="VENUE"
       />
       <CardMedia
@@ -78,40 +78,5 @@ export default function RecipeReviewCard() {
         </CardContent>
       </Collapse>
     </Card>
-=======
-          <Grid container spacing={4}>
-            {cards.map((card) => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
-                <Card sx={{ maxHeight: '100%', display: 'flex', flexDirection: 'column' }}>
-                  {/* <CardMedia
-                    component="img"
-                    sx={{
-                      // 16:9
-                      pt: '100%',
-                    }}
-                    image="https://source.unsplash.com/random"
-                    alt="random"
-                  /> */}
-                  <CardContent sx={{ flexGrow: 1 }}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      Heading
-                    </Typography>
-                    <Typography>
-                      This is a media card. You can use this section to describe the
-                      content.
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Button size="small">View</Button>
-                    <Button size="small">Edit</Button>
-                  </CardActions>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        {/* </Container> */}
-      </main>
-    </ThemeProvider>
->>>>>>> 8f36afdce511afa8f44a8901635d1e51979db9d9
   );
 }
