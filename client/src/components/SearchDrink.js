@@ -16,7 +16,7 @@ import { Box } from "@mui/system";
 import { TextField } from "@mui/material";
 import { InputAdornment } from "@mui/material";
 import { useLazyQuery } from '@apollo/client';
-import { GET_SEARCH } from "../utils/queries";
+// import { GET_SEARCH } from "../utils/queries";
 import { GET_DRINK } from "../utils/queries";
 /*
 
@@ -42,7 +42,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-export default function SearchModal() {
+export default function SearchDrink() {
   const [open, setOpen] = React.useState(false);
   const [search,setSearch]=React.useState('')
   const handleClickOpen = () => {
@@ -92,7 +92,7 @@ export default function SearchModal() {
  
      
     }
-    const [getSearch,{loading,data}]= useLazyQuery(GET_SEARCH,{
+    const [getSearch,{loading,data}]= useLazyQuery(GET_DRINK,{
       variables:search
     })
     if(loading) return "loading..."
@@ -122,7 +122,7 @@ console.log(arr1)
   return (
     <div>
       <Button variant="contained" onClick={handleClickOpen} sx={{backgroundColor: '#8b1f07', fontFamily: 'Monteserrat', fontSize: "1em"}}>
-        Search Venues
+        Search Drinks
       </Button>
       <Dialog
         fullScreen

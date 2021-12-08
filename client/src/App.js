@@ -3,6 +3,7 @@ import Login from "./pages/Login";
 import SignUp from "./pages/Signup";
 import Nav from './components/Nav';
 import Profile from "./pages/Profile";
+import Results from "./pages/Results"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import React from "react";
 import {
@@ -52,6 +53,9 @@ function App() {
               </Route>
               <Route exact path="/profile">
                 <Profile />
+              </Route>
+              <Route exact path="/results">
+                <Results />
               </Route>
             </Switch>
           </Router>
