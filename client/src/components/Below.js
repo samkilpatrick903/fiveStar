@@ -8,7 +8,7 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import Image from "../assets/dranks.jpg";
+import Image from "../assets/blackSquare copy.jpg";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   card: {
     backgroundColor: "black",
     color: "white",
-    boxShadow: "1px 2px 2px 2px #1C0B03",
+    boxShadow: "0px 0px 0px 3px #FFFFFF",
     display: "flex",
     justifyContent: "center",
     alignItems: "stretch",

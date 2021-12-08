@@ -35,7 +35,7 @@ export default function Home() {
           minWidth: "100%",
           pt: 5,
           pb: 5,
-          boxShadow: "1px 2px 2px 2px #1C0B03",
+          boxShadow: "2px 2px 2px 2px #FFFFFF",
         }}
       >
         <Container maxWidth="lg">
