@@ -26,6 +26,36 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 export default function SearchDrink(props) {
   const [open, setOpen] = React.useState(false);
   const [search, setSearch] = React.useState("");
+  const [result, setResult] = React.useState([
+    {
+      name: "test",
+      date: "test",
+      venue: "test",
+      recommendations: ["test"],
+    },
+  ]);
+
+  //fill result array
+  React.useEffect(() => {
+    result.map((yes) => {
+      if (yes.recommendations !== null) {
+        return {
+          name: yes?.drinkName || "",
+          date: yes?.date || "",
+          venue: yes?.venue || "",
+          reviews: yes?.recommendations._id || "",
+        };
+      } else {
+        return {
+          name: yes?.drinkName || "",
+          date: yes?.date || "",
+          venue: yes?.venue || "",
+          reviews: [],
+        };
+      }
+    });
+  }, [result]);
+
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -52,18 +82,26 @@ export default function SearchDrink(props) {
   }
   if (loading) return "loading...";
   const { drink } = data || {};
+  console.log(drink);
+  let resultPromise = new Promise((resolve, reject) => {
+    if (drink) {
+      resolve(drink);
+    } else {
+      reject(Error("Query failure"));
+    }
+  });
+  resultPromise
+    .then((result) => {
+      setResult(result);
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+
   const arr1 = [];
   arr1.push(drink);
 
   console.log(arr1);
-  console.log(search);
-
-  const resData = arr1.map((yes) => ({
-    name: yes?.drinkName || "",
-    date: yes?.date || "",
-    venue: yes?.venue || "",
-    reviews: yes?.recommendations[0]._id || "",
-  }));
 
   return (
     <div>
@@ -154,8 +192,8 @@ export default function SearchDrink(props) {
         </AppBar>
         <Box>
           <List>
-            {resData.map((loc) => (
-              <div style={{ textDecoration: "none" }} key={loc.name}>
+            {result.map((loc, i) => (
+              <div style={{ textDecoration: "none" }} key={i}>
                 <Link
                   to={{
                     pathname: "/results",

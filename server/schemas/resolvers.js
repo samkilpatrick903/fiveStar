@@ -29,7 +29,8 @@ const resolvers = {
       );
     },
     drink: async (parent, { drinkName }) => {
-      return await Drink.findOne({ drinkName: drinkName })
+      console.log(drinkName)
+      return await Drink.find({ drinkName: drinkName })
     },
     drinks: async (parent, { drinkName }) => {
       return await Drink.find()
@@ -82,7 +83,7 @@ const resolvers = {
       await Venue.findOneAndUpdate(
 				{ venue: venue },
 				{
-					$addToSet: {
+					$push: {
 						drink_names: [
 							 drinkName
             ]
