@@ -38,22 +38,12 @@ export const ADD_USER = gql`
   }
 `;
 
-export const SAVE_BOOK = gql`
-  mutation saveBook($newBook: InputBook!) {
-    saveBook(newBook: $newBook) {
-      _id
-      username
-      email
-      savedBooks {
-        bookId
-        authors
-        description
-        title
-        image
-        link
-      }
-    }
+export const ADD_REVIEW = gql`
+mutation Mutation($userid: ID!, $name: String!, $drink: ID!, $count: Int!) {
+  addReview(userid: $userid, name: $name, drink: $drink, count: $count) {
+    drinkName
   }
+}
 `;
 
 export const REMOVE_BOOK = gql`

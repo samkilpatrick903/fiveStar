@@ -12,7 +12,7 @@ import logo from '../assets/fivestar_logo2-01.png'
 import Card from '@mui/material/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardMedia from '@material-ui/core/CardMedia';
-
+import SearchDrink from '../components/SearchDrink';
 export default function Home() {
   return (
     <Grid>
@@ -41,7 +41,7 @@ export default function Home() {
               justifyContent="center"
             >
               <SearchModal/>
-              <Button variant="contained" sx={{backgroundColor: '#8b1f07', fontFamily: 'Monteserrat', fontSize: "1em"}}>Browse Favorites</Button>
+              <SearchDrink/>
             </Stack>
           </Container>
        </Container>
