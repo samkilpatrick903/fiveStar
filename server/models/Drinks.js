@@ -3,9 +3,10 @@ const Schema = mongoose.Schema
 const ObjectId = Schema.Types.ObjectId;
 
 const DrinkSchema = new Schema({
-    venue: [{
-        type: String
-    }],
+    venue: {
+        type: ObjectId,
+        ref: 'Venue'
+    },
     drinkName: {
         type: String,
         required: true
