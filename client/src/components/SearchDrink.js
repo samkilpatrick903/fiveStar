@@ -136,8 +136,7 @@ export default function SearchDrink(props) {
               edge="start"
               color="inherit"
               onClick={handleClose}
-              aria-label="close"
-            >
+              aria-label="close">
               <CloseIcon />
             </IconButton>
             <Box
