@@ -78,12 +78,16 @@ export default function SearchDrink(props) {
         Search Drinks
       </Button>
       <Dialog
+      
         fullScreen
         open={open}
         onClose={handleClose}
         TransitionComponent={Transition}
       >
-        <AppBar sx={{ position: "relative" }}>
+        <AppBar sx={{
+          backgroundColor:'#D9310B',
+          color:'rgba(0, 0, 0, 0.87)',
+          position: "relative" }}>
           <Toolbar>
             <IconButton
               edge="start"
@@ -136,16 +140,25 @@ export default function SearchDrink(props) {
             </Button>
           </Toolbar>
         </AppBar>
-        <List>
+        <Box
+        >
+        <List
+        >
           {resData.map((loc) => (
-            <div key={loc.name}>
+            <div 
+            style={{ textDecoration:'none'
+          }}
+            key={loc.name}>
               <Link
+              
                 to={{
                   pathname: "/results",
                   state: loc, // your data array of objects}}
                 }}
               >
-                <ListItem button>
+                <ListItem button
+                sx={{textDecoration:'none'}}
+                >
                   <ListItemText primary={loc.name} secondary={loc.venue} />
                 </ListItem>
               </Link>
@@ -156,6 +169,7 @@ export default function SearchDrink(props) {
 
           {/* <Divider /> */}
         </List>
+        </Box>
       </Dialog>
     </div>
   );
