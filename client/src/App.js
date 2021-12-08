@@ -36,7 +36,8 @@ const client = new ApolloClient({
 });
 
 
-function App() {
+function App(props) {
+  const  data = props.history     
   return (
       <ApolloProvider client={client}>
         <Router>
@@ -54,7 +55,7 @@ function App() {
               <Route exact path="/profile">
                 <Profile />
               </Route>
-              <Route exact path="/results" render={(props) =>  <Results  />}>
+              <Route exact path="/results" render={(data) =>  <Results  {...data}/>}>
                
               </Route>
             </Switch>
