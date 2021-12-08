@@ -59,7 +59,10 @@ type Mutation {
     addUser(name: String!, email: String!, password: String!): Auth
     addDrink(drinkName: String!,venue:[String]!): Drink
     addReview(userid:ID!,name:String!,drink:ID!,count:Int!):Drink
+    deleteUser(userId: ID!): User
+    deleteRecommendation(recommendationsID:ID!):Recommend
 }
+
 
 `;
 
