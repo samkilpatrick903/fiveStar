@@ -12,7 +12,7 @@ type User{
 }
 type Drink{
     _id:ID!
-    venue:[Venue]!
+    venue:[String]!
     drinkName:String!
     recommendations:[Recommend]!
     date:String
@@ -29,7 +29,7 @@ type Venue{
     location_name: String!
     address: [String]!
     up_votes: Int
-    drink_names: [Drink]
+    drink_names: [String]
     user_drinks:[User]
 }
 
@@ -49,16 +49,17 @@ type Query{
     users:[User]!
     user(userid: ID!):User
     venue(location_name: String!):Venue
+    drink(drinkName: String!):Drink
+
 }
 
 type Mutation {
     addVenue(location_name:String!,address:[String]!,drink_names:[String]!):Venue
     login(email: String!, password: String!): Auth
     addUser(name: String!, email: String!, password: String!): Auth
-    addDrink(drinkName: String!): Drink
-    addReview(userid:ID!,name:String!,drink:ID!,count:Int!,recommendations:ID!):User
+    addDrink(drinkName: String!,venue:[String]!): Drink
+    addReview(userid:ID!,name:String!,drink:ID!,count:Int!):Drink
 }
-
 
 `;
 

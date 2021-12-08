@@ -14,7 +14,7 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-
+import SearchDrink from '../components/SearchDrink';
 export default function Home() {
   return (
     <Grid>
@@ -47,7 +47,7 @@ export default function Home() {
               justifyContent="center"
             >
               <SearchModal/>
-              <Button variant="contained" sx={{backgroundColor: '#8b1f07', fontFamily: 'Monteserrat', fontSize: "1em"}}>Browse Favorites</Button>
+              <SearchDrink/>
             </Stack>
           </Container>
        </Container>
