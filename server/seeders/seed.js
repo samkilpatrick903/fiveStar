@@ -14,63 +14,130 @@ db.once('open', async () => {
     await Recommend.deleteMany({});
     await Venue.deleteMany({});
 
-    const users=await User.insertMany(userSeeds);
-    const drinks=await Drink.insertMany(drinkSeeds);
+
+
+	const users=await User.insertMany(userSeeds);
     const reviews =await Recommend.insertMany(recSeeds);
     const venues=await Venue.insertMany(locationData);
-  
-    console.log('Technologies seeded!');
-    process.exit(0);
-  });
-  // const users = await User.insertMany(userSeeds);
-	// const threads = await Thread.insertMany(threadSeeds);
 
-	// const posts = await Post.insertMany(postSeeds);
-	// console.log(posts)
-	// const events = await Event.insertMany(eventSeeds);
 
-	// const comments=await Comment.insertMany(commentSeeds);
-	// console.log(comments)
+
+	for (let i = 0; i < drinkSeeds.length; i++) {
+		const {venue,_id ,drinkName} = await Drink.create(drinkSeeds[i]);
+		await Venue.findOneAndUpdate(
+			{ _id: venue },
+			{
+				$addToSet: {
+					user_drinks: _id
+				}
+			}
+		)
+		await Recommend.findOneAndUpdate(
+			{drinkle:_id},
+			{
+				$addToSet:{
+					name:drinkName
+				}
+			}
+		)
+	}
+
+	
+
+	for (let i = 0; i < locationData.length; i++) {
+		const { _id, location_name } = await Venue.create(locationData[i]);
+		await Drink.findOneAndUpdate(
+			{ venue: _id },
+			{
+				$addToSet: {
+					location: location_name
+				}
+			}
+		);
+	}
+
+	// for (let i = 0; i < eventSeeds.length; i++) {
+	// 	const { _id, thread } = await Event.create(eventSeeds[i]);
+	// 	await Thread.findOneAndUpdate(
+	// 		{ title: thread },
+	// 		{
+	// 			$addToSet: {
+	// 				events: _id
+	// 			}
+	// 		}
+	// 	);
+
+		// for (let i = 0; i < attendees.length; i++) {
+		// 	await User.findOneAndUpdate(
+		// 		{ _id: attendees[i] },
+		// 		{
+		// 			$addToSet: {
+		// 				events: 
+		// 			}
+		// 		}
+		// 	);
+		// }
+	//}
+
+	// for (let i = 0; i < commentPostSeeds.length; i++) {
+	// 	const { _id, post } = await Comment.create(commentPostSeeds[i]);
+	// 	await Post.findOneAndUpdate(
+	// 		{ _id: post },
+	// 		{
+	// 			$addToSet: {
+	// 				comments: _id
+	// 			}
+	// 		}
+	// 	);
+	// }
+
+	// for (let i = 0; i < commentEventSeeds.length; i++) {
+	// 	const { _id, event } = await Comment.create(commentEventSeeds[i]);
+	// 	await Event.findOneAndUpdate(
+	// 		{ _id: event },
+	// 		{
+	// 			$addToSet: {
+	// 				comments: _id
+	// 			}
+	// 		}
+	// 	);
+	// }
 	// for (newUsers of users) {
 	// 	// randomly add users to threads
 
-	// 	const tempMembers = threads[Math.floor(Math.random() * threads.length)];
+	// 	const tempMembers = reviews[Math.floor(Math.random() * reviews.length)];
 
-	// 	tempMembers.members.push(newUsers._id);
+	// 	tempMembers.votes.push(newUsers._id);
 
 	// 	await tempMembers.save();
-
-	// 	//randomly add users to event-attentees
-
-	// 	const tempAttendees = events[Math.floor(Math.random() * events.length)];
-
-	// 	tempAttendees.attendees.push(newUsers._id);
-
-	// 	tempMembers.moderator.push(newUsers._id);
-
-	// 	await tempAttendees.save();
-
-	// 	// randomly add a thread for users
-	// 	const tempThread = threads[Math.floor(Math.random() * threads.length)];
-
-	// 	newUsers.threads = tempThread._id;
-
-	// 	//.moderator.push(newUsers._id);
-	// 	await newUsers.save();
-
-	// 	for(newPost of posts){
-	// 		const tempThreadPost=threads[Math.floor(Math.random() * threads.length)];
+	// }
 	
-	// 		tempThreadPost.posts.push(newPost._id);
+	// 	for(newDrink of drinks){
+	// 		const tempThreadPost=venues[Math.floor(Math.random() * venues.length)];
+	// 		// const tempRec=reviews[Math.floor(Math.random() * reviews.length)];
+
+	// 		tempThreadPost.user_drinks.push(newDrink._id);
+			
+	// 		// tempRec.drinkle.push(newDrink._id)
+
+	// 		// await tempRec.save()
+	// 		await tempThreadPost.save()
+	// 	}
+	// 	for(newVenue of venues){
+
+	// 		const tempThreadPost=drinks[Math.floor(Math.random() * drinks.length)];
+	
+	// 		tempThreadPost.venue.push(newVenue._id);
 	
 	// 		await tempThreadPost.save()
+	// 	}
+
+		// 	const tempCommentPost = comments[Math.floor(Math.random() * comments.length)];
 	
-	// 		//const tempCommentPost = comments[Math.floor(Math.random() * comments.length)];
+		// 		newPost.comments=tempCommentPost._id
 	
-	// 			//newPost.comments=tempCommentPost._id
-	
-	// 		//await tempCommentPost.save()
-	// 	}}
-	// 	console.log('all done!');
-	// 	process.exit(0);
-	// }); 
+		// 	await tempCommentPost.save()
+		// }
+		console.log('all done!');
+		process.exit(0);
+	}); 

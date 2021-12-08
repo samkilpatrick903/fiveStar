@@ -8,11 +8,11 @@ const venueSchema = new Schema({
   //   type: ObjectId,
   //   required: true,
   // },
-  location_name: {
+  location_name: [{
     type: String,
     required: true,
     trim: true,
-  },
+  }],
   address: [
     {
     type: String,

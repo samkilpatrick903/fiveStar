@@ -12,7 +12,7 @@ type User{
 }
 type Drink{
     _id:ID!
-    venue:[String]!
+    venue:String!
     drinkName:String
     recommendations:[Recommend]!
     date:String

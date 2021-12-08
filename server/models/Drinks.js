@@ -11,6 +11,7 @@ const DrinkSchema = new Schema({
         type: String,
         required: true
     },
+    location:[String],
     recommendations: [{
           type: ObjectId ,
           ref:'Recommend'
