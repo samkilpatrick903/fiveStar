@@ -51,6 +51,7 @@ export default function Home() {
             direction="row"
             spacing={3}
             justifyContent="center"
+            padding={3}
           >
             <SearchModal />
             <SearchDrink />
