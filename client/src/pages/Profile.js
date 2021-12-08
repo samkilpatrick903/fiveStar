@@ -97,18 +97,16 @@ console.log(props)
           {cards.map((card) => (
             <Typography
               sx={{ display: "flex", justifyContent: "center" }}
-              variant="h3"
+              variant="h5"
               align="center"
-              color="text.secondary"
-              paragraph
-            >
+              color="text.secondary">
               {" "}
               Welcome, {card.username}
             </Typography>
           ))}
           <Box sx={{ display: "flex", justifyContent: "center" }}>
             <Avatar
-              alt="ML"
+              alt="margarita logo"
               src={marg}
               sx={{
                 width: 130,
