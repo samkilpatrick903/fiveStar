@@ -36,7 +36,4 @@ query drink($drinkName: String!) {
     date
   }
 }
-
-
-  
 `;

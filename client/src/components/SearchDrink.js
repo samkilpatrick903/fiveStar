@@ -44,7 +44,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 export default function SearchDrink() {
   const [open, setOpen] = React.useState(false);
-  const [search,setSearch]=React.useState('')
+  const [search,setSearch]=React.useState("")
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -92,22 +92,29 @@ export default function SearchDrink() {
  
      
     }
-    const [getSearch,{loading,data}]= useLazyQuery(GET_DRINK,{
+    const [getSearch,{error,loading,data}]= useLazyQuery(GET_DRINK,{
       variables:search
     })
+    if(error){
+        console.log(error)
+    }
     if(loading) return "loading..."
-    const {venue}=data || {}
-      const arr1=[]
+    const {drink}=data || {}
+       const arr1=[]
+arr1.push(drink)
+    console.log(arr1)
+    console.log(search)
+    // const {venue}=data || {}
     
-      const fuck=venue
-     arr1.push(fuck)
+    //   const fuck=venue
+    //  arr1.push(fuck)
   //    console.log(arr1)
 
 
-const resData=arr1.map((yes)=>({
-  name:yes?.location_name || '',
-  address:yes?.address || '',
-  drinks:yes?.drink_names || '',
+ const resData=arr1.map((yes)=>({
+  name:yes?.drinkName || '',
+  date:yes?.date || '',
+  venue:yes?.venue || '',
 }))
 // for(const lip in venue){
 
@@ -115,8 +122,8 @@ const resData=arr1.map((yes)=>({
 // const resData={
 //   name:fuck.location_name,
 // }
-console.log(resData)
-console.log(arr1)
+ console.log(resData)
+// console.log(arr1)
 //     }
    
   return (
@@ -143,7 +150,7 @@ console.log(arr1)
             <Box sx={{ pl: "1rem" }} component="form" onSubmit={(e)=>{
                           e.preventDefault()
                           getSearch({
-                          variables:{location_name:search.searchInput}
+                          variables:{drinkName:search.searchInput}
                           })
                         }}
                         
@@ -188,12 +195,12 @@ console.log(arr1)
            ||{}
           */}
           {resData.map((loc) => (
-            <div key={loc.address}>
+            <div key={loc.name}>
               <ListItem button>
                 {/* EACH WILL BE COINTAINED IN BUTTON THAT LINKS TOO SINGLE RESULT PAGE?? */}
                 <ListItemText
                   primary={loc.name}
-                  secondary={loc.address}
+                  secondary={loc.venue}
                   //secondary={loc.drink_names}
                   
                 />

@@ -97,6 +97,8 @@ export default function SearchModal() {
     })
     if(loading) return "loading..."
     const {venue}=data || {}
+    console.log(venue)
+    console.log(search)
       const arr1=[]
     
       const fuck=venue
