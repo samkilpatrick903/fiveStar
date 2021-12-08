@@ -2,22 +2,200 @@
     {
       "name": "Todd Taylor",
       "email": "todd@test.com",
-      "password": "password1234"
+      "password": "password1234",
+      "picture":"not available"
     },
     {
       "name": "Sam Kilpatrick",
       "email": "sam@test.com",
-      "password": "password1234"
+      "password": "password1234",
+      "picture":"not available"
     },
     {
       "name": "Mary Lou Hoover",
       "email": "ml@test.com",
-      "password": "password1234"
+      "password": "password1234",
+      "picture":"not available"
     },
     {
       "name": "Brooke Jones",
       "email": "brooke@test.com",
-      "password": "password1234"
+      "password": "password1234",
+      "picture":"not available"
+    },
+    {
+      "name": "John Hoover",
+      "email": "john@test.com",
+      "password": "password1234",
+      "picture":"not available"
+    },
+    {
+      "name": "Jose Rameriez",
+      "email": "jose@test.com",
+      "password": "password1234",
+      "picture":"not available"
+    },
+    {
+      "name": "Bobbie Willis",
+      "email": "bobbie@test.com",
+      "password": "password1234",
+      "picture":"not available"
+    },
+    {
+      "name": "Kate Gibbens",
+      "email": "kated@test.com",
+      "password": "password1234",
+      "picture":"not available"
+    },
+    {
+      "name": "Candice Flores",
+      "email": "candice@test.com",
+      "password": "password1234",
+      "picture":"not available"
+    },
+    {
+      "name": "Maggie Hoover",
+      "email": "maggie@test.com",
+      "password": "password1234",
+      "picture":"not available"
+    },
+    {
+      "name": "Butthole Brown",
+      "email": "butthole@test.com",
+      "password": "password1234",
+      "picture":"not available"
+    },
+    {
+      "name": "Brianna Adams",
+      "email": "brianna@test.com",
+      "password": "password1234",
+      "picture":"not available"
+    },
+    {
+      "name": "John Adams",
+      "email": "john_adams@test.com",
+      "password": "password1234",
+      "picture":"not available"
+    },
+    {
+      "name": "Isaac Newton",
+      "email": "isaac@test.com",
+      "password": "password1234",
+      "picture":"not available"
+    },
+    {
+      "name": "Kaley Cuoco",
+      "email": "kaley@test.com",
+      "password": "password1234",
+      "picture":"not available"
+    },
+    {
+      "name": "Sheldon Cooper",
+      "email": "sheldon@test.com",
+      "password": "password1234",
+      "picture":"not available"
+    },
+    {
+      "name": "Amy Bialik",
+      "email": "amy@test.com",
+      "password": "password1234",
+      "picture":"not available"
+    },
+    {
+      "name": "Leonard Galecki",
+      "email": "leonard@test.com",
+      "password": "password1234",
+      "picture":"not available"
+    },
+    {
+      "name": "Simon Helberg",
+      "email": "simon@test.com",
+      "password": "password1234",
+      "picture":"not available"
+    },
+    {
+      "name": "Raj Koothrappali",
+      "email": "raj@test.com",
+      "password": "password1234",
+      "picture":"not available"
+    },
+    {
+      "name": "Wil Wheaton",
+      "email": "wil@test.com",
+      "password": "password1234",
+      "picture":"not available"
+    },
+    {
+      "name": "Howard Wolowitz",
+      "email": "howard@test.com",
+      "password": "password1234",
+      "picture":"not available"
+    },
+    {
+      "name": "Capt. Jean-Luc Picard",
+      "email": "captin@test.com",
+      "password": "password1234",
+      "picture":"not available"
+    },
+    {
+      "name": "William Riker",
+      "email": "will@test.com",
+      "password": "password1234",
+      "picture":"not available"
+    },
+    {
+      "name": "Cmdr. Data",
+      "email": "commander@test.com",
+      "password": "password1234",
+      "picture":"not available"
+    },
+    {
+      "name": "Deanna Troi",
+      "email": "deanna@test.com",
+      "password": "password1234",
+      "picture":"not available"
+    },
+    {
+      "name": "Wesley Crusher",
+      "email": "wesley@test.com",
+      "password": "password1234",
+      "picture":"not available"
+    },
+    {
+      "name": "Dr. Beverly Crusher",
+      "email": "doctor@test.com",
+      "password": "password1234",
+      "picture":"not available"
+    },
+    {
+      "name": "Geordi La Forge",
+      "email": "geordi@test.com",
+      "password": "password1234",
+      "picture":"not available"
+    },
+    {
+      "name": "David Rose",
+      "email": "david@test.com",
+      "password": "password1234",
+      "picture":"not available"
+    },
+    {
+      "name": "Stevie Budd",
+      "email": "stevie@test.com",
+      "password": "password1234",
+      "picture":"not available"
+    },
+    {
+      "name": "Alexis Rose",
+      "email": "alexis@test.com",
+      "password": "password1234",
+      "picture":"not available"
+    },
+    {
+      "name": "Moira Rose",
+      "email": "moira@test.com",
+      "password": "password1234",
+      "picture":"not available"
     }
   ]
   
