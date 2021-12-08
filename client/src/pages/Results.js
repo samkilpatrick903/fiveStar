@@ -15,6 +15,7 @@ import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
+
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
   return <IconButton {...other} />;
@@ -34,24 +35,23 @@ export default function RecipeReviewCard() {
   };
 
   return (
-    <Card sx={{ width: '60%', justifyContent: "center", }}>
+    <div style={{ display:'flex', justifyContent:'center', paddingTop: 70 }}
+    >
+    <Card sx={{ width: '70%' }}>
 
       <CardHeader
         
-<<<<<<< HEAD
-        title="VENUE"
+        title="VENUE" align="center"
       />
-      <CardMedia
+      <CardMedia 
         component="img"
         height="194"
         image="/static/images/cards/paella.jpg"
         alt="Paella dish"
       />
       <CardContent>
-        <Typography variant="body2" color="text.secondary">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the mussels,
-          if you like.
+        <Typography variant="body2" color="text.secondary" align="center">
+          LOCATION
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
@@ -69,49 +69,16 @@ export default function RecipeReviewCard() {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>Method:</Typography>
-          <Typography paragraph>
-            Heat 1/2 cup of the broth in a pot until simmering, add saffron and set
-            aside for 10 minutes.
+          <Typography align="center"paragraph>TOP DRINKS: </Typography>
+          <Typography align="center"paragraph>
+            Drink 1
+            Drink 2
+            Drink 3
           </Typography>
           
         </CardContent>
       </Collapse>
     </Card>
-=======
-          <Grid container spacing={4}>
-            {cards.map((card) => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
-                <Card sx={{ maxHeight: '100%', display: 'flex', flexDirection: 'column' }}>
-                  {/* <CardMedia
-                    component="img"
-                    sx={{
-                      // 16:9
-                      pt: '100%',
-                    }}
-                    image="https://source.unsplash.com/random"
-                    alt="random"
-                  /> */}
-                  <CardContent sx={{ flexGrow: 1 }}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      Heading
-                    </Typography>
-                    <Typography>
-                      This is a media card. You can use this section to describe the
-                      content.
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Button size="small">View</Button>
-                    <Button size="small">Edit</Button>
-                  </CardActions>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        {/* </Container> */}
-      </main>
-    </ThemeProvider>
->>>>>>> 8f36afdce511afa8f44a8901635d1e51979db9d9
+    </div>
   );
 }
