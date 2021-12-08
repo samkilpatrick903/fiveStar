@@ -20,10 +20,12 @@ const resolvers = {
       throw new AuthenticationError("You need to be logged in!");
     },
     venues: async () => {
-      return await Venue.find({})
+      return await Venue.find({});
     },
     venue: async (parent, { location_name }) => {
-      return await Venue.findOne({ location_name: location_name }).populate('user_drinks')
+      return await Venue.findOne({ location_name: location_name }).populate(
+        "user_drinks"
+      );
     },
     drink: async (parent, { drinkName }) => {
       return await Drink.findOne({ drinkName: drinkName }).populate('venue')
@@ -39,13 +41,13 @@ const resolvers = {
       const user = await User.findOne({ email });
 
       if (!user) {
-        throw new AuthenticationError('No user found');
+        throw new AuthenticationError("No user found");
       }
 
       const correctPw = await user.isCorrectPassword(password);
 
       if (!correctPw) {
-        throw new AuthenticationError('Incorrect credentials');
+        throw new AuthenticationError("Incorrect credentials");
       }
 
       const token = signToken(user);
@@ -53,17 +55,15 @@ const resolvers = {
       return { token, user };
     },
     addVenue: async (parent, args, context) => {
-			//! add user context to authenticate
-			// if (context.user) {
-			//! get rid of userId when we can user the context to our advantage
-			const { location_name, address, drink_names } = args;
-			const newVenue = await Venue.create({
-				location_name: location_name,
-				address: address,
-        drink_names: drink_names
-
-			});
-		
+      //! add user context to authenticate
+      // if (context.user) {
+      //! get rid of userId when we can user the context to our advantage
+      const { location_name, address, drink_names } = args;
+      const newVenue = await Venue.create({
+        location_name: location_name,
+        address: address,
+        drink_names: drink_names,
+      });
 			return newVenue;
 			// }
 			// throw new AuthenticationError('You need to be logged in to do that!');
@@ -118,8 +118,7 @@ const resolvers = {
 		},
   
   },
-}
-
+};
 
 module.exports = resolvers;
 

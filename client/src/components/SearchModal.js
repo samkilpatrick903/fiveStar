@@ -18,6 +18,7 @@ import { InputAdornment } from "@mui/material";
 import { useLazyQuery } from "@apollo/client";
 import { GET_SEARCH } from "../utils/queries";
 import { GET_DRINK } from "../utils/queries";
+
 import { Link } from "react-router-dom";
 
 
@@ -52,6 +53,7 @@ export default function SearchModal() {
     },
   ];
 
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     setSearch({
@@ -59,7 +61,7 @@ export default function SearchModal() {
       [name]: value,
     });
   };
- 
+
   const [getSearch, { loading, data }] = useLazyQuery(GET_SEARCH, {
     variables: search,
   });
@@ -89,11 +91,11 @@ export default function SearchModal() {
         onClick={handleClickOpen}
         sx={{
           backgroundColor: "#D9310B",
-          fontFamily: "Monteserrat",
-          fontSize: "1em",
+          font: "Monteserrat",
+          fontSize: "1.5em",
         }}
       >
-        Search Venues
+        Venues
       </Button>
       <Dialog
         fullScreen
@@ -101,16 +103,25 @@ export default function SearchModal() {
         onClose={handleClose}
         TransitionComponent={Transition}
       >
-        <AppBar sx={{ position: "relative" }}>
+        <AppBar
+          sx={{
+            position: "relative",
+            backgroundColor: "#D9310B",
+            fontFamily: "Monteserrat",
+            fontSize: "1em",
+            elevation: 2
+          }}
+        >
           <Toolbar>
-            <IconButton
+          
+          <IconButton
               edge="start"
               color="inherit"
               onClick={handleClose}
-              aria-label="close"
-            >
-              <CloseIcon />
+              aria-label="close">
+            <CloseIcon />
             </IconButton>
+
             <Box
               sx={{ pl: "1rem" }}
               component="form"
@@ -129,7 +140,7 @@ export default function SearchModal() {
                 required
                 fullWidth
                 name="searchInput"
-                label="Search"
+                label="Search Venues"
                 type="searchInput"
                 id="searchInput"
                 autoComplete="search"
@@ -142,18 +153,21 @@ export default function SearchModal() {
                         color="secondary"
                         type="submit"
                       >
-                        <Fingerprint />
+                        <Fingerprint sx={{ color: "black" }}/>
                       </IconButton>
                     </InputAdornment>
                   ),
                 }}
               />
             </Box>
-            <Button autoFocus color="inherit" onClick={handleClose}>
-              Close
+
+            <Button variant='contained' color="error" size='large' onClick={handleClose} sx={{ ml: 6, mt: 1 }}>
+              Add A Venue
             </Button>
+
           </Toolbar>
         </AppBar>
+
         <List>
      
           {resData.map((loc) => (
@@ -166,12 +180,15 @@ export default function SearchModal() {
               >
                 <ListItem button></ListItem>
                 <ListItem button>
+                 
                   <ListItemText
+                    sx={{ BackgroundColor: "transparent" }}
                     primary={loc.name}
                     secondary={loc.address}
                   />
                 </ListItem>
               </Link>
+
               <Divider />
             </div>
           ))}
