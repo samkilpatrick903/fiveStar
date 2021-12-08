@@ -2,6 +2,7 @@ const { AuthenticationError } = require("apollo-server-express");
 const User = require("../models/User");
 const Venue = require("../models/Venue");
 const Drink = require("../models/Drinks");
+const Recommend = require("../models/Recommend");
 const Recommendation = require("../models/Recommend");
 const { signToken } = require("../utils/auth");
 
@@ -30,7 +31,11 @@ const resolvers = {
     drink: async (parent, { drinkName }) => {
       return await Drink.findOne({ drinkName: drinkName })
     },
+    drinks: async (parent, { drinkName }) => {
+      return await Drink.find()
+    },
   },
+
   Mutation: {
     addUser: async (parent, args) => {
       const user = await User.create(args);
@@ -88,6 +93,17 @@ const resolvers = {
 			);
       return newDrink
     },
+    
+    deleteRecommendation: async (parent, {recommendationsID}, context) => {
+      await Recommend.findByIdAndDelete(recommendationsID,{new:true}
+      )
+    } ,
+
+    deleteUser: async (parent, { userId }, context) => {
+        await User.findByIdAndDelete(userId, {new:true}
+        )
+  
+  },
     addReview: async (parent, args, context) => {
 			const { userid, name,drink,venue_id,count } = args;
 			// if (context.user._id) {
@@ -109,6 +125,7 @@ const resolvers = {
 					}
 				
 				},{ new: true }
+
 
 			);
 			// }
