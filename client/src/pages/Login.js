@@ -16,10 +16,9 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { useMutation } from '@apollo/client';
-import { LOGIN_USER } from '../utils/mutations'
-import Auth from '../utils/auth';
-
+import { useMutation } from "@apollo/client";
+import { LOGIN_USER } from "../utils/mutations";
+import Auth from "../utils/auth";
 
 // export function MediaQuery() {
 //   const [isDesktop, setDesktop] = useState(window.innerWidth > 1450);
@@ -31,7 +30,6 @@ import Auth from '../utils/auth';
 //     window.addEventListener("resize", updateMedia);
 //     return () => window.removeEventListener("resize", updateMedia);
 //   });
-
 
 //   return <div>{isDesktop ? <LoginDesktop /> : <Login />}</div>;
 // }
@@ -70,8 +68,8 @@ const LoginForm = styled("form")({
 const theme = createTheme();
 
 export default function Login() {
-  const [formState, setFormState] = useState({ email: '', password: '' });
-  const [login, {error,loading}] = useMutation(LOGIN_USER);
+  const [formState, setFormState] = useState({ email: "", password: "" });
+  const [login, { error, loading }] = useMutation(LOGIN_USER);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -79,7 +77,7 @@ export default function Login() {
       ...formState,
       [name]: value,
     });
-  }
+  };
   const HandleLogin = async (event) => {
     event.preventDefault();
 
@@ -88,7 +86,7 @@ export default function Login() {
       const { data } = await login({
         variables: { ...formState },
       });
-      if(loading) return "loading"
+      if (loading) return "loading";
       Auth.login(data.login.token);
     } catch (e) {
       console.error(e);
@@ -96,17 +94,14 @@ export default function Login() {
 
     // clear form values
     setFormState({
-      email: '',
-      password: '',
+      email: "",
+      password: "",
     });
   };
 
   return (
     <ThemeProvider theme={theme}>
-      <Grid container component="main"
-       sx={{ height: "100vh" }}
-       
-       >
+      <Grid container component="main" sx={{ height: "100vh" }}>
         <CssBaseline />
         <Grid
           item
@@ -124,7 +119,7 @@ export default function Login() {
             backgroundPosition: "center",
           }}
         />
-        
+
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
           <Box
             sx={{
@@ -136,14 +131,12 @@ export default function Login() {
             }}
           >
             <Avatar sx={{ m: 1, bgcolor: "transparent" }}>
-              <LockOutlinedIcon style={{color:"#D9310B"}} />
+              <LockOutlinedIcon style={{ color: "#D9310B" }} />
             </Avatar>
             <Typography component="h1" variant="h5">
               Sign in
             </Typography>
-            
-            
-            
+
             <Box
               component="form"
               noValidate
@@ -178,15 +171,15 @@ export default function Login() {
                 control={<Checkbox value="remember" color="primary" />}
                 label="Remember me"
               />
-              <Button 
+              <Button
                 type="submit"
                 fullWidth
                 variant="contained"
-                sx={{ mt: 3, mb: 2, backgroundColor: '#D9310B'}}
+                sx={{ mt: 3, mb: 2, backgroundColor: "#D9310B" }}
               >
                 Sign In
               </Button>
-              
+
               <Grid container>
                 <Grid item xs>
                   <Link href="#" variant="body2">
