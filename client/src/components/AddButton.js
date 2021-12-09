@@ -57,6 +57,8 @@ export function AddButton() {
     });
   if(error){
       console.log(error)
+  }else{
+     // return alert('drink added')
   }
   
   const handleFormSubmit = async (event) => {
