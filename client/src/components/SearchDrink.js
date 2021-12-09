@@ -200,7 +200,6 @@ export default function SearchDrink(props) {
                   }}
                 >
                   <ListItem button sx={{ textDecoration: "none" }}>
-                    <ListItemText primary={loc.name} secondary={loc.venue} />
                   </ListItem>
                 </Link>
 
