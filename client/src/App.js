@@ -14,7 +14,7 @@ import {
   createHttpLink,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
-
+import VenueResults from './pages/VenueResult'
 const httpLink = createHttpLink({
   uri: (window.location.hostname === '<fiveStar>') ? '/graphql' : 'http://localhost:3001/graphql' 
 
@@ -64,7 +64,9 @@ function App(props) {
                 <Profile />
               </Route>
               <Route exact path="/results" render={(data) =>  <Results  {...data}/>}>
-            
+                </Route>
+              <Route exact path="/venueresults" render={(data) =>  <VenueResults  {...data}/>}>
+
            
               </Route>
             </Switch>

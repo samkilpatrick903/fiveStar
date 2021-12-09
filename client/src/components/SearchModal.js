@@ -157,7 +157,7 @@ export default function SearchModal() {
             <div key={loc.address}>
               <Link
                 to={{
-                  pathname: "/results",
+                  pathname: "/venueresults",
                   state: loc, 
                 }}
               >
