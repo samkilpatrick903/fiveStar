@@ -43,7 +43,7 @@ export default function SearchDrink(props) {
           name: yes?.drinkName || "",
           date: yes?.date || "",
           venue: yes?.venue || "",
-          reviews: yes?.recommendations[0]._id || "",
+          reviews: yes?.recommendations._id || "",
         };
       } else {
         return {
