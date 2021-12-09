@@ -43,7 +43,7 @@ export default function SearchDrink(props) {
           name: yes?.drinkName || "",
           date: yes?.date || "",
           venue: yes?.venue || "",
-          reviews: yes?.recommendations._id || "",
+          reviews: yes?.recommendations[0]._id || "",
         };
       } else {
         return {
@@ -201,7 +201,7 @@ export default function SearchDrink(props) {
                   }}
                 >
                   <ListItem button sx={{ textDecoration: "none" }}>
-                    <ListItemText primary={loc.name} secondary={loc.venue} />
+                    <ListItemText primary={loc.drinkName} secondary={loc.venue[0]} />
                   </ListItem>
                 </Link>
 
