@@ -70,10 +70,10 @@ export default function Results(props) {
             </Typography>
             <Typography align="center" paragraph>
               Reviewers <br />
-              {state?.recommendations || state.address}
+              {state?.recommendations[0]._id }
               <br />
               <br />
-              Venues <br /> {state?.venue || state.drinks}
+              Venues <br /> {state?.venue[0] }
             </Typography>
           </CardContent>
         </Collapse>
