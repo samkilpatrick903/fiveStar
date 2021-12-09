@@ -4,8 +4,8 @@ const ObjectId = Schema.Types.ObjectId;
 
 const DrinkSchema = new Schema({
     venue: [{
-        type: ObjectId,
-        ref: 'Venue'
+        type: String,
+        // ref: 'Venue'
     }],
     drinkName: {
         type: String,
