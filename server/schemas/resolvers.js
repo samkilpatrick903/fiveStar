@@ -87,7 +87,7 @@ const resolvers = {
         venue:venue
       })
       await Venue.findOneAndUpdate(
-				{ venue: venue },
+				{ location_name: venue },
 				{
 					$push: {
 						drink_names: [

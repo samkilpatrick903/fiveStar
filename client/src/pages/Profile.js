@@ -19,7 +19,7 @@ import marg from "../assets/marg.jpg";
 import Logo from "../assets/ML_LOGO.png";
 import Avatar from "@mui/material/Avatar";
 import Stack from "@mui/material/Stack";
-
+import {AddButton}from '../components/AddButton'
 const theme = createTheme();
 
 const cards = [
@@ -91,6 +91,23 @@ console.log(props)
       <CssBaseline />
       <main>
         <Container maxWidth="sm">
+     
+        <Button
+        variant="contained"
+        onClick={()=>{
+          window.location.assign('/adder')
+        }}
+        sx={{
+          backgroundColor: "#D9310B",
+          font: "Monteserrat",
+          fontSize: "1.5em",
+        }}
+      >
+        Drinks
+      </Button>
+      
+      
+         
           <Card sx={{ backgroundColor: "transparent", m: 5 }}>
             <CardMedia component="img" src={Logo} title="logo" />
           </Card>
