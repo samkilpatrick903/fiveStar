@@ -178,15 +178,7 @@ export default function SearchDrink(props) {
               />
             </Box>
 
-            <Button
-              variant="contained"
-              color="error"
-              size="large"
-              onClick={handleClose}
-              sx={{ ml: 6, mt: 1 }}
-            >
-              Add A Drink
-            </Button>
+            
           </Toolbar>
         </AppBar>
         <Box>
