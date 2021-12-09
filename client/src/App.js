@@ -4,7 +4,7 @@ import SignUp from "./pages/Signup";
 import Nav from './components/Nav';
 import Profile from "./pages/Profile";
 import Results from "./pages/Results"
-
+import {AddButton}from './components/AddButton'
 import { BrowserRouter as Router, Switch, Redirect, Route } from "react-router-dom";
 import React from "react";
 import {
@@ -57,6 +57,9 @@ function App(props) {
                 <SignUp />
               </Route>
            
+              <Route exact path="/adder" element={AddButton} >
+                <Profile />
+              </Route>
               <Route exact path="/profile" element={Profile} >
                 <Profile />
               </Route>
