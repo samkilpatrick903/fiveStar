@@ -114,7 +114,7 @@ export default function SearchDrink(props) {
           fontSize: "1.5em",
         }}
       >
-        Drinks
+        Browse Drinks
       </Button>
       <Dialog
         fullScreen

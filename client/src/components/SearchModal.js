@@ -80,7 +80,7 @@ export default function SearchModal() {
           fontSize: "1.5em",
         }}
       >
-        Venues
+        Browse Venues
       </Button>
       <Dialog
         fullScreen
