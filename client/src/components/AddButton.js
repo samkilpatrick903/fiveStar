@@ -38,20 +38,26 @@ export function AddButton() {
 
   
     const [addDrink, { error }] = useMutation(ADD_DRINK,{
-      update(cache, { data: { addDrink } }) {
-        try {
-          const { drinks } = cache.readQuery({ query: GET_ALL_DRINKS });
+        variables:formState
+
+    //   update(cache, { data: { addDrink } }) {
+    //     try {
+    //         console.log(addDrink)
+    //       const { drinks } = cache.readQuery({ query: GET_ALL_DRINKS });
   
-          cache.writeQuery({
-            query: GET_ALL_DRINKS,
-            data: { drinks: [addDrink, ...drinks] },
-          });
-        } catch (e) {
-          console.error(e);
-        }
-      },
+    //       cache.writeQuery({
+    //         query: GET_ALL_DRINKS,
+    //         data: { drinks: [addDrink, ...drinks] },
+    //       });
+    //     } catch (e) {
+    //       console.error(e);
+    //     }
+    //   },
+  
     });
-  
+  if(error){
+      console.log(error)
+  }
   
   const handleFormSubmit = async (event) => {
       event.preventDefault();
@@ -71,13 +77,8 @@ export function AddButton() {
     };
     const handleChange = (event) => {
         const { name, value } = event.target;
+        setFormState({ ...formState, [name]: value });
     
-        // if (name === 'thoughtText' && value.length <= 280) {
-          setFormState({ ...formState, [name]: value });
-         // setCharacterCount(value.length);
-        // } else if (name !== 'thoughtText') {
-        //   setFormState({ ...formState, [name]: value });
-        // }
       };
     
     return (
@@ -94,32 +95,34 @@ export function AddButton() {
                 margin="normal"
                 required
                 fullWidth
-                name="searchInput"
-                label="Search Drinks"
+                name="drinkName"
+                label="Drink Name"
                 type="searchInput"
-                id="searchInput"
+                id="drinkName"
                 autoComplete="search"
                 onChange={handleChange}
-                InputProps={{
-                  endAdornment: (
-                    <InputAdornment position="end">
-                      <IconButton
-                        aria-label="fingerprint"
-                        color="secondary"
-                        type="submit"
-                      >
-                        <Fingerprint />
-                      </IconButton>
-                    </InputAdornment>
-                  ),
-                }}
               />
+               <TextField
+                variant="outlined"
+                endAdornment
+                sx={{ disableUnderline: true }}
+                margin="normal"
+                required
+                fullWidth
+                name="venue"
+                label="Venue Name"
+                type="Input"
+                id="venue"
+                autoComplete="input"
+                onChange={handleChange}
+              />
+        <button className="btn btn-primary btn-block py-3" type="submit">
+              A Drink
+            </button>
             </Box>
   
           <div className="col-12 col-lg-3">
-            <button className="btn btn-primary btn-block py-3" type="submit">
-              A Drink
-            </button>
+     
           </div>
           {error && (
             <div className="col-12 my-3 bg-danger text-white p-3">
