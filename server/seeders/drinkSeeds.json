@@ -12,7 +12,7 @@
     "date":"2021-12-06T17:37:49.426+00:00"
 },
 {
-    "venue":"61b12de794643dceca0c886c",
+    "venue":["61b0cc0d7917fcb04d645888"],
     "drinkName":"Naughty Nugget",
     "recommendations":"61b025662c7f56683e0edfbd",
     "date":"2021-12-06T17:37:49.426+00:00"
@@ -140,61 +140,61 @@
 {
     "venue":"61b0cc0d7917fcb04d64589d",
     "drinkName":"White Trash Beers",	
-    "recommendations":["61b025662c7f56683e0edfd2", "61b025662c7f56683e0edfd3"],
+    "recommendations":["61b025662c7f56683e0edfd2"],
     "date":"2021-12-06T17:37:49.426+00:00"
 },
 {
     "venue":"61b0cc0d7917fcb04d645888",
     "drinkName":"Elf Fashioned",	
-    "recommendations":["61b025662c7f56683e0edfd2", "61b025662c7f56683e0edfd3"],
+    "recommendations":["61b025662c7f56683e0edfd2"],
     "date":"2021-12-06T17:37:49.426+00:00"
 },
 {
     "venue":"61b0cc0d7917fcb04d645889",
     "drinkName":"Austin Jackass",	
-    "recommendations":["61b025662c7f56683e0edfd2", "61b025662c7f56683e0edfd4"],
+    "recommendations":["61b025662c7f56683e0edfd2"],
     "date":"2021-12-06T17:37:49.426+00:00"
 },
 {
     "venue":"61b0cc0d7917fcb04d64588a",
     "drinkName":"Mexico City Sour",	
-    "recommendations":["61b025662c7f56683e0edfd2", "61b025662c7f56683e0edfd5"],
+    "recommendations":["61b025662c7f56683e0edfd2"],
     "date":"2021-12-06T17:37:49.426+00:00"
 },
 {
     "venue":"61b0cc0d7917fcb04d64588b",
     "drinkName":"Whiskey Rose",	
-    "recommendations":["61b025662c7f56683e0edfd2", "61b025662c7f56683e0edfd6"],
+    "recommendations":["61b025662c7f56683e0edfd2"],
     "date":"2021-12-06T17:37:49.426+00:00"
 },
 {
     "venue":"61b0cc0d7917fcb04d64588c",
     "drinkName":"Texas-Sized Mimosa",	
-    "recommendations":["61b025662c7f56683e0edfd2", "61b025662c7f56683e0edfd7"],
+    "recommendations":["61b025662c7f56683e0edfd2"],
     "date":"2021-12-06T17:37:49.426+00:00"
 },
 {
     "venue":"61b0cc0d7917fcb04d64588d",
     "drinkName":"Texas-Sized Mimosa",	
-    "recommendations":["61b025662c7f56683e0edfd2", "61b025662c7f56683e0edfd8"],
+    "recommendations":["61b025662c7f56683e0edfd2"],
     "date":"2021-12-06T17:37:49.426+00:00"
 },
 {
     "venue":"61b0cc0d7917fcb04d64588d",
     "drinkName":"Frozen Painkiller",	
-    "recommendations":["61b025662c7f56683e0edfd2", "61b025662c7f56683e0edfd9"],
+    "recommendations":["61b025662c7f56683e0edfd2"],
     "date":"2021-12-06T17:37:49.426+00:00"
 },
 {
     "venue":"61b0cc0d7917fcb04d64588e",
     "drinkName":"Death Valley",	
-    "recommendations":["61b025662c7f56683e0edfd2", "61b025662c7f56683e0edfd0"],
+    "recommendations":["61b025662c7f56683e0edfd2"],
     "date":"2021-12-06T17:37:49.426+00:00"
 },
 {
     "venue":"61b0cc0d7917fcb04d64588f",
     "drinkName":"The Zombie",	
-    "recommendations":["61b025662c7f56683e0edfd2", "61b025662c7f56683e0edfda"],
+    "recommendations":["61b025662c7f56683e0edfd2"],
     "date":"2021-12-06T17:37:49.426+00:00"
 },
 {
@@ -206,49 +206,49 @@
 {
     "venue":"61b0cc0d7917fcb04d645891",
     "drinkName":"Mimosa Bucket",	
-    "recommendations":["61b025662c7f56683e0edfd2", "61b025662c7f56683e0edfd3"],
+    "recommendations":["61b025662c7f56683e0edfd2"],
     "date":"2021-12-06T17:37:49.426+00:00"
 },
 {
     "venue":"61b0cc0d7917fcb04d645892",
     "drinkName":"Chuy's Famous Ritas",	
-    "recommendations":["61b025662c7f56683e0edfd2", "61b025662c7f56683e0edfd3"],
+    "recommendations":["61b025662c7f56683e0edfd2"],
     "date":"2021-12-06T17:37:49.426+00:00"
 },
 {
     "venue":"61b0cc0d7917fcb04d645893",
     "drinkName":"El Camino",	
-    "recommendations":["61b025662c7f56683e0edfd2", "61b025662c7f56683e0edfbd"],
+    "recommendations":["61b025662c7f56683e0edfd2"],
     "date":"2021-12-06T17:37:49.426+00:00"
 },
 {
     "venue":"61b0cc0d7917fcb04d645894",
     "drinkName":"Wine",	
-    "recommendations":["61b025662c7f56683e0edfd2", "61b025662c7f56683e0edfbe"],
+    "recommendations":["61b025662c7f56683e0edfd2"],
     "date":"2021-12-06T17:37:49.426+00:00"
 },
 {
     "venue":"61b0cc0d7917fcb04d645895",
     "drinkName":"The Peppermint Patty",	
-    "recommendations":["61b025662c7f56683e0edfd2", "61b025662c7f56683e0edfbf"],
+    "recommendations":["61b025662c7f56683e0edfd2"],
     "date":"2021-12-06T17:37:49.426+00:00"
 },
 {
     "venue":"61b0cc0d7917fcb04d645896",
     "drinkName":"Fords Ranch Water",	
-    "recommendations":["61b025662c7f56683e0edfd2", "61b025662c7f56683e0edfc0"],
+    "recommendations":["61b025662c7f56683e0edfd2"],
     "date":"2021-12-06T17:37:49.426+00:00"
 },
 {
     "venue":"61b0cc0d7917fcb04d645897",
     "drinkName":"Feels Like Summer",	
-    "recommendations":["61b025662c7f56683e0edfd2", "61b025662c7f56683e0edfc1"],
+    "recommendations":["61b025662c7f56683e0edfd2"],
     "date":"2021-12-06T17:37:49.426+00:00"
 },
 {
     "venue":"61b0cc0d7917fcb04d645898",
     "drinkName":"Rye of the Tiger",	
-    "recommendations":["61b025662c7f56683e0edfd2", "61b025662c7f56683e0edfc2"],
+    "recommendations":["61b025662c7f56683e0edfd2"],
     "date":"2021-12-06T17:37:49.426+00:00"
 },
 {

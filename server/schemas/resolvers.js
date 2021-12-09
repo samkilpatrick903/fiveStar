@@ -24,13 +24,19 @@ const resolvers = {
       return await Venue.find({});
     },
     venue: async (parent, { location_name }) => {
-      return await Venue.findOne({ location_name: location_name }).populate(
-        "user_drinks"
-      )
+      return await Venue.findOne({ location_name: location_name })
     },
     drink: async (parent, { drinkName }) => {
       console.log(drinkName)
-      return await Drink.find({ drinkName: drinkName }).populate("venue.location_name")
+      const shit= await Drink.find({ drinkName: drinkName })
+      // const god ='61b14f681ebdae4d69d0b447'
+      // //let arr1=[]
+      // console.log(god)
+      // // let bar = shit
+      //   let venueData=await Venue.findOne({_id:god})
+      //   //arr1.push(venueData)
+      // console.log(venueData)
+      return shit
     },
     drinks: async (parent, { drinkName }) => {
       return await Drink.find()
