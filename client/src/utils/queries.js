@@ -30,7 +30,7 @@ export const GET_SEARCH = gql`
 `;
 
 
-export const GET_ALL_DRINK = gql`
+export const GET_ALL_DRINKS = gql`
 query drinks {
   drinks {
     drinkName
@@ -39,6 +39,8 @@ query drinks {
   }
 }
 `;
+
+
 export const GET_VENUES = gql`
 query venues {
   venues {

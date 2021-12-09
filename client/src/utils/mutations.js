@@ -11,8 +11,13 @@ export const LOGIN_USER = gql`
     }
   }
 `;
-
-
+export const ADD_DRINK=gql`
+mutation addDrink($drinkName: String!, $venue: [String]!) {
+  addDrink(drinkName: $drinkName, venue: $venue) {
+    drinkName
+  }
+}
+`
 export const ADD_DATA=gql`
 mutation addData($coinData:newCoin){
   addData(coinData:$coinData){
