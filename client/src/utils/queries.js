@@ -19,7 +19,7 @@ export const GET_SEARCH = gql`
       address
       drink_names
       user_drinks{
-        name
+        _id
       }
    
    
@@ -54,6 +54,9 @@ query drink($drinkName: String!) {
     drinkName
     venue
     date
+    recommendations{
+      _id
+    }
   }
 }
 `;
