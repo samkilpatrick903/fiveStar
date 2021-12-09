@@ -1,17 +1,11 @@
-
-
-
-
 import { ADD_DRINK } from "../utils/mutations";
 import React, { useState } from "react";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Button from "@mui/material/Button";
-
 import {useMutation,useQuery} from "@apollo/client"
 import {GET_ALL_DRINKS} from '../utils/queries'
-
 
 const style = {
     position: "absolute",
