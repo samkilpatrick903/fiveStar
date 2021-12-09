@@ -94,7 +94,8 @@ console.log(props)
      
         <Button
         variant="contained"
-        onClick={()=>{
+        onClick={(e)=>{
+          e.preventDefault();
           window.location.assign('/adder')
         }}
         sx={{

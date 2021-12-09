@@ -58,7 +58,7 @@ function App(props) {
               </Route>
            
               <Route exact path="/adder" element={AddButton} >
-                <Profile />
+                <AddButton />
               </Route>
               <Route exact path="/profile" element={Profile} >
                 <Profile />
