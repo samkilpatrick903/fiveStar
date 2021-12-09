@@ -28,27 +28,27 @@ export default function Nav () {
            
             <IconButton size="large">
             <Link to="/login"> 
-              <Badge sx={{fontFamily: 'Monteserrat', fontSize: ".6em",}}>
+              <Badge sx={{font: 'Monteserrat', fontSize: ".6em",}}>
                 <LocalBarTwoToneIcon  sx={{mr:.5}} style={{fill: "white"}} /> 
-                login
+                Login
                 </Badge> 
               </Link>
             </IconButton>
 
             <IconButton size="large" color="inherit">
             <Link to="/signup" underline="none">
-              <Badge sx={{fontFamily: 'Monteserrat', fontSize: ".6em", underline: 'none'}}>
+              <Badge sx={{fontStyle: 'Monteserrat', fontSize: ".6em", underline: 'none'}}>
                 <PersonAddAltTwoToneIcon sx={{mr:.5}} style={{fill: "white"}}/>
-                signup
+                Signup
               </Badge>
               </Link>
             </IconButton>
       
             <IconButton size="large" color="inherit">
             <Link to="/profile"> 
-              <Badge color="error" sx={{fontFamily: 'Monteserrat', fontSize: ".6em"}}>
+              <Badge color="error" sx={{font: 'Monteserrat', fontSize: ".6em", color: "FFFFFF"}}>
                 <LiquorTwoToneIcon sx={{mr:.5}} style={{fill: "white"}}/> 
-                profile
+                Profile
               </Badge>
               </Link>
             </IconButton>

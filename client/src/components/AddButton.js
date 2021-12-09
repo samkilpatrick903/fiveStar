@@ -12,7 +12,6 @@ import { InputAdornment } from "@mui/material";
 import {useMutation,useQuery} from "@apollo/client"
 import {GET_ALL_DRINKS} from '../utils/queries'
 
-
 const style = {
     position: "absolute",
     top: "50%",

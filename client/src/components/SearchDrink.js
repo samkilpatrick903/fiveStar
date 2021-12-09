@@ -1,14 +1,12 @@
 import * as React from "react";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
-import ListItemText from "@mui/material/ListItemText";
 import ListItem from "@mui/material/ListItem";
 import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
 import CloseIcon from "@mui/icons-material/Close";
 import Slide from "@mui/material/Slide";
 import Fingerprint from "@mui/icons-material/Fingerprint";
@@ -136,8 +134,7 @@ export default function SearchDrink(props) {
               edge="start"
               color="inherit"
               onClick={handleClose}
-              aria-label="close"
-            >
+              aria-label="close">
               <CloseIcon />
             </IconButton>
             <Box
@@ -179,7 +176,15 @@ export default function SearchDrink(props) {
               />
             </Box>
 
-            
+            <Button
+              variant="contained"
+              color="error"
+              size="large"
+              onClick={handleClose}
+              sx={{ ml: 6, mt: 1 }}
+            >
+              Add A Drink
+            </Button>
           </Toolbar>
         </AppBar>
         <Box>
@@ -193,7 +198,6 @@ export default function SearchDrink(props) {
                   }}
                 >
                   <ListItem button sx={{ textDecoration: "none" }}>
-                    <ListItemText primary={loc.drinkName} secondary={loc.venue[0]} />
                   </ListItem>
                 </Link>
 

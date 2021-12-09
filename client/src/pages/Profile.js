@@ -174,9 +174,14 @@ console.log(props)
                       </Typography>
                     ))}
                   </CardContent>
-                  <CardActions>
+                  <CardActions style={{justifyContent: 'center'}}>
                     <Button onClick={handleOpen} size="small">
-                      View
+                      View Address
+                    </Button>
+                  </CardActions>
+                  <CardActions style={{justifyContent: 'center'}}>
+                    <Button variant="outlined" color="error">
+                      Delete
                     </Button>
                   </CardActions>
                 </Card>
@@ -213,6 +218,7 @@ console.log(props)
                     ligula.
                   </Typography>
                 </Box>
+                
               </Modal>
             </div>
           </Grid>
