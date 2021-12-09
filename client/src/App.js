@@ -16,7 +16,7 @@ import {
 import { setContext } from "@apollo/client/link/context";
 import VenueResults from './pages/VenueResult'
 const httpLink = createHttpLink({
-  uri: (window.location.hostname === '<fiveStar>') ? '/graphql' : 'http://localhost:3001/graphql' 
+  uri: 'http://localhost:3001/graphql' 
 
 });
 
