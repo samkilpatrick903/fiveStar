@@ -22,11 +22,8 @@ export const ADD_DATA=gql`
 mutation addData($coinData:newCoin){
   addData(coinData:$coinData){
     name
-
-  
   }
 }
-
 `
 
 export const ADD_USER = gql`

@@ -87,9 +87,9 @@ export const Below = () => {
                 {data.drink_names}
               </Typography>
               <CardActionArea className={classes.cardaction}>
-                <Button className={classes.button} size="small">
+                {/* <Button className={classes.button} size="small">
                   Check out {data.location_name}!
-                </Button>
+                </Button> */}
               </CardActionArea>
             </CardContent>
           </Card>
