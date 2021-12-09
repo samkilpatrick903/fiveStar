@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
 import Container from "@mui/material/Container";
-// import Image from '../assets/oldfashioned.jpg';
 import SearchModal from "../components/SearchModal";
 import { Below } from "../components/Below";
 import logo from "../assets/fivestar_logo2-01.png";
@@ -11,24 +10,13 @@ import Button from "@mui/material/Button";
 import CardMedia from "@material-ui/core/CardMedia";
 import SearchDrink from "../components/SearchDrink";
 
-import AuthService from "../utils/auth";
-
 export default function Home() {
-  // const [currentPage, setCurrentPage] = useState("Home");
-  // const renderPage = () => {
-  //   if (currentPage === "Home") {
-  //     return <Home />;
-  //   } else if (AuthService.loggedIn()) {
-  //   }
-  // };
-  // const handlePageChange = (page) => setCurrentPage(page);
 
   return (
     <Grid>
       <Container
         sx={{
           backgroundColor: "black",
-          //backgroundImage: `url(${Image})`,
           minWidth: "100%",
           pt: 5,
           pb: 5,
