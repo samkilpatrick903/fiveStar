@@ -4,7 +4,6 @@ import Grid from "@mui/material/Grid";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
-import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Image from "../assets/blackSquare copy.jpg";
 
@@ -87,9 +86,6 @@ export const Below = () => {
                 {data.drink_names}
               </Typography>
               <CardActionArea className={classes.cardaction}>
-                {/* <Button className={classes.button} size="small">
-                  Check out {data.location_name}!
-                </Button> */}
               </CardActionArea>
             </CardContent>
           </Card>
